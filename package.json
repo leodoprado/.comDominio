@@ -1,0 +1,22 @@
+{
+  "name": "comdominio",
+  "version": "1.0.0",
+  "description": ".comDomínio - Projeto Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leodoprado/.comDominio.git"
+  },
+  "author": "Leonardo do Prado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leodoprado/.comDominio/issues"
+  },
+  "homepage": "https://github.com/leodoprado/.comDominio#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
