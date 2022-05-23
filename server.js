@@ -1,14 +1,12 @@
-const express = require('express')
-const app = express;
+require('dotenv').config;
+require('module-alias/register');
+const config = require('@config');
+const app = require('@app');
 
-app.use('/', (req, res) => {
-    res.send('Hello World!')
-})
-
-app.listen(4000, (err) => {
+app.listen(config.app.port, (err) => {
     if(err) {
         return console.log('erro')
     }
 
-    console.log('O servidor está rodando na porta 4000')
+    console.log(`Servidor rodando em http://localhost:${config.app.port}`);
 })
