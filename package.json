@@ -29,6 +29,7 @@
     "@app": "src/app.js",
     "@config": "src/config",
     "@controller": "src/controller",
-    "@database": "src/database"
+    "@database": "src/database",
+    "@public": "src/public"
   }
 }

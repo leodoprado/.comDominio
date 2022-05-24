@@ -1,4 +1,5 @@
 # .comDomínio - projeto Web
+***Instale as dependências do projeto utilizando o comando: npm install***
 
 **Dependências do projeto:**
   * Express

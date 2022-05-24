@@ -10,6 +10,7 @@
         "@config/*": ["src/config/*"],
         "@controller/*": ["src/controller/*"],
         "@database/*": ["src/database/*"],
+        "@public/*": ["src/public/*"],
       }
     },
     "exclude": ["node_modules", "dist"]
