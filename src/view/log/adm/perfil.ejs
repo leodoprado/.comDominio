@@ -1,0 +1,63 @@
+<body>
+    <div class="container">
+        <div class="container-conteudo">
+            <div class="conteudo">
+                <div class="conteudo-dados-da-conta">
+                    <div class="max-width">
+                        <div class="imageContainer">
+                            <img src="/img/log/adm/foto-background.png" alt="Selecione uma imagem" id="imgPhoto">
+                        </div>
+                    </div>
+                    <form action="">
+                        <input type="file" id="flImage" name="fImage" accept="image/*">
+                    </form>
+                    <div class="dados-da-conta">
+                        <label for="">ID Morador: <input type="text" id="idmorador" disabled></label>
+                        <label for="">Senha: <input type="password" id="senha" disabled></label>
+                        <label for="">Nível de acesso: <input type="text" id="nivelacesso" disabled></label>
+                    </div>
+                </div>
+                <div class="conteudo-dados-pessoais">
+                    <h4>Dados Pessoais</h4>
+                    <hr>
+                    <div class="dados-pessoais">
+                        <label for="">Nome: <input type="text" id="input-nome"></label>
+                        <label for="" id="label-data-nascimento">Data de Nascimento: <input id="input-data-nascimento" type="text"></label>
+                    </div>
+                    <div class="dados-pessoais">
+                        <label for="">CPF: <input type="text" id="input-cpf"></label>
+                        <label for="" id="label-rg">RG: <input id="" type="text"></label>
+                    </div>
+                    <div class="dados-pessoais">
+                        <label for="">Email: <input type="text" id="input-email"></label>
+                    </div>
+                    <div class="dados-pessoais">
+                        <label for="">Telefone 1: <input type="text" class="input-telefone"></label>
+                        <label for="" id="label-telefone2">Telefone 2: <input type="text" class="input-telefone"></label>
+                    </div>
+                </div>
+            </div>
+                <div class="conteudo-contato">
+                    <h4>Endereço</h4>
+                    <hr>
+                    <div class="contato">
+                        <label for="">Endereço: <input type="text" id="input-endereco"></label>
+                        <label for="" id="label-numero">Número: <input id="input-numero" type="text"></label>
+                        <label for="" id="label-complemento">Complemento: <input id="input-complemento" type="text"></label>
+                    </div>
+                    <div class="contato">
+                        <label for="">Cidade: <input type="text" id="input-cidade"></label>
+                        <label for="" id="label-estado">Estado: <input id="input-estado" type="text"></label>
+                        <label for="" id="label-pais">País: <input id="input-pais" type="text"></label>
+                        <button type="" id="btn-cancelar">Cancelar</button>
+                        <button type="" id="btn-salvar" >Salvar</button>
+                    </div>
+                </div>
+        </div>
+
+    <script src="/js/log/adm/foto-perfil.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+    <script src="/js/log/adm/jquery.mask.js"></script>
+    <script src="/js/log/adm/mask.js"></script>
+</body>
+</html>

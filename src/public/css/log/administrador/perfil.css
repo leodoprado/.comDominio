@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Carter+One&family=Livvic:wght@400;500;600;700&family=Nunito:wght@400;500;700&family=Oxanium:wght@800&display=swap');
+
+:root {
+    --primary-color: rgb(8, 37, 103);
+    --second-color: rgb(255, 255, 255);
+    --third-color: #5072A7;
+    --four-color: rgb(224, 224, 224);
+    --primary-font: "Nunito", sans serif;
+    --second-font: "Livvic", sans serif;
+    --third-font: "Carter One", sans serif;
+    --logo-font: "Bakbak One", sans serif;
+    --gap: 1.5rem;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+    border: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	appearance: none;
+	font-family: var(--second-font), Times, serif;
+}
+body, html{
+	overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+	height: 100vh;
+	background: var(--second-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo {
+    display: flex;
+}
+
+.container-conteudo {
+    width: 90%;
+    height: 90%;
+    margin-left: 70px;
+    background-color: var(--second-color);
+    box-shadow: 0 0 5px var(--third-color);
+    padding: 20px;
+}
+
+.conteudo-dados-da-conta {
+    width: 500px;
+    color: var(--primary-color);
+    background-color: var(--second-color);
+    box-shadow: 0 0 5px var(--four-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+}
+
+.dados-da-conta {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+textarea:focus, input:focus, select:focus {
+    border: 0 none;
+    outline: 0;
+} 
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.dados-da-conta input {
+    width: 165px;
+    font-size: 18px;
+    height: 25px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 30px;
+}
+
+.dados-da-conta input:focus {
+    box-shadow: 0 0 3px var(--primary-color);
+}
+
+#idmorador {
+    margin-top: 5px;
+}
+
+.inputs-dados-da-conta label, input {
+    margin-bottom: 10px;
+}
+
+input[type='file']{
+    display: none;
+}
+
+#imgPhoto {
+    width: 150px;
+    height: 150px;
+    padding: 4px;
+    box-shadow: 0 0 5px var(--third-color);
+    border-radius: 50%;
+    background-color: var(--second-color);
+    cursor: pointer;
+    transition: 1s;
+}
+
+#imgPhoto:hover {
+    box-shadow: 0 0 5px var(--third-color);
+    border-radius: 50%;
+    background-color: var(--four-color);
+}
+
+/*///////////////////////////////////////*/
+
+.conteudo-dados-pessoais {
+    width: 100%;
+    color: var(--primary-color);
+    padding-left: 20px;
+}
+
+.dados-pessoais input:focus {
+    box-shadow: 0 0 3px var(--primary-color);
+}
+
+.dados-pessoais {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dados-pessoais input {
+    font-size: 18px;
+    height: 25px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 20px;
+}
+
+.dados-pessoais {
+    margin-top: 40px;
+}
+
+#input-nome {
+    width: 270px;
+}
+
+#label-data-nascimento {
+    margin-left: 90px;
+}
+
+#input-data-nascimento {
+    width: 100px;
+}
+
+#label-rg {
+    margin-left: 62px;
+}
+
+#input-email {
+    width: 400px;
+}
+
+#input-telefone {
+    width: 200px;
+}
+
+#label-telefone2 {
+    margin-left: 60px;
+}
+
+/*///////////////////////////////////////*/
+
+.conteudo-contato {
+    color: var(--primary-color);
+    margin-top: 25px;
+}
+
+hr {
+    margin: 2px 0 5px;
+    border-top: 1px solid #eee;
+}
+
+.contato {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.contato input:focus {
+    box-shadow: 0 0 3px var(--primary-color);
+}
+
+.contato input {
+    font-size: 18px;
+    height: 25px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 20px;
+}
+
+.contato {
+    margin-top: 40px;
+}
+
+#input-endereco {
+    width: 430px;
+}
+
+#label-numero {
+    margin-left: 60px;
+}
+
+#input-numero {
+    width: 60px;
+}
+
+#label-complemento {
+    margin-left: 60px;
+}
+
+#input-complemento {
+    width: 200px;
+}
+
+#input-cidade {
+    width: 300px;
+}
+
+#label-estado {
+    margin-left: 60px;
+}
+
+#input-estado {
+    width: 30px;
+}
+
+#label-pais {
+    margin-left: 60px;
+}
+
+#input-pais {
+    width: 130px;
+}
+
+#btn-cancelar {
+    border: none;
+    font-family: var(--primary-font);
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    opacity: 0.9;
+    padding: 2px;
+    margin-left: 110px;
+}
+
+#btn-cancelar:hover{
+    background: var(--second-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+#btn-salvar {
+    border: none;
+    font-family: var(--primary-font);
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    opacity: 0.9;
+    padding: 2px;
+    margin-left: 20px;
+}
+
+#btn-salvar:hover{
+    background: var(--second-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
