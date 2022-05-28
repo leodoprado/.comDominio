@@ -11,6 +11,7 @@
         "@controller/*": ["src/controller/*"],
         "@database/*": ["src/database/*"],
         "@public/*": ["src/public/*"],
+        "@model/*": ["src/model/*"],
       }
     },
     "exclude": ["node_modules", "dist"]

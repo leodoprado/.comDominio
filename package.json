@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/leodoprado/.comDominio#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
     "module-alias": "^2.2.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.19.2"
@@ -31,6 +33,7 @@
     "@config": "src/config",
     "@controller": "src/controller",
     "@database": "src/database",
-    "@public": "src/public"
+    "@public": "src/public",
+    "@model": "src/model"
   }
 }
