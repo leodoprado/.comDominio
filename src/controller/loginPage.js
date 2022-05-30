@@ -9,16 +9,12 @@ router.get('/login', (req, res) => {
 
 router.post('/authenticate', (req, res) => {
     var nivelAcesso = req.body.nivelAcesso;
-    console.log(nivelAcesso)
     var idUser = req.body.login;
-    console.log(idUser)
     var senha = req.body.senha;
-    console.log(senha)
 
     UserAuth.findOne({where:{idUser: idUser}}).then(user => {
         var UsuarioExiste = (user != undefined)
         var Acesso = (nivelAcesso == user.nivelAcesso)
-        console.log(Acesso)
         if(UsuarioExiste && Acesso){
                 var correctSenha = bcrypt.compareSync(senha, user.senha);
                 if(correctSenha){
@@ -31,11 +27,17 @@ router.post('/authenticate', (req, res) => {
                 res.redirect("/login");
             }
         } else {
-            res.redirect("/");
+            res.redirect("/login");
         }
     })
 })
 
+router.get('/logout', (req, res) => {
+    req.session.user = undefined;
+    res.redirect("/");
+})
+
+// Vai ser alterado para a devida rota protegida
 router.get('/create', (req, res) => {
     res.render("home/create")
 })
