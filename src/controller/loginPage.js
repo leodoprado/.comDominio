@@ -9,23 +9,30 @@ router.get('/login', (req, res) => {
 
 router.post('/authenticate', (req, res) => {
     var nivelAcesso = req.body.nivelAcesso;
+    console.log(nivelAcesso)
     var idUser = req.body.login;
+    console.log(idUser)
     var senha = req.body.senha;
+    console.log(senha)
 
     UserAuth.findOne({idUser: idUser}).then(user => {
-        if(user != undefined) {
-            var correct = bcrypt.compareSync(senha, user.senha);
-            if(correct){
-                req.session.user = {
-                    id: user.id,
-                    idUser: user.idUser
-                }
-                res.redirect("/login/adm/perfil")
+        var UsuarioExiste = (user != undefined)
+        var Acesso = (user.nivelAcesso == nivelAcesso)
+        console.log(Acesso)
+        if(UsuarioExiste && Acesso){
+                var correctSenha = bcrypt.compareSync(senha, user.senha);
+                if(correctSenha){
+                    req.session.user = {
+                        id: user.id,
+                        idUser: user.idUser,
+                        nivelAcesso: user.nivelAcesso
+                    }
+                res.redirect(`/login/${nivelAcesso}/perfil`);
             }else{
                 res.redirect("/login");
             }
         } else {
-            res.redirect("/login");
+            res.redirect("/");
         }
     })
 })
