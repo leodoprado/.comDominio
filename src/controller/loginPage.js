@@ -15,15 +15,14 @@ router.post('/authenticate', (req, res) => {
     var senha = req.body.senha;
     console.log(senha)
 
-    UserAuth.findOne({idUser: idUser}).then(user => {
+    UserAuth.findOne({where:{idUser: idUser}}).then(user => {
         var UsuarioExiste = (user != undefined)
-        var Acesso = (user.nivelAcesso == nivelAcesso)
+        var Acesso = (nivelAcesso == user.nivelAcesso)
         console.log(Acesso)
         if(UsuarioExiste && Acesso){
                 var correctSenha = bcrypt.compareSync(senha, user.senha);
                 if(correctSenha){
                     req.session.user = {
-                        id: user.id,
                         idUser: user.idUser,
                         nivelAcesso: user.nivelAcesso
                     }
