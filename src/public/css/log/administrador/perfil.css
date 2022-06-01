@@ -46,7 +46,7 @@ body, html{
     height: 90%;
     margin-left: 70px;
     background-color: var(--second-color);
-    box-shadow: 0 0 5px var(--third-color);
+    box-shadow: 0 0 1px var(--third-color);
     padding: 20px;
 }
 
@@ -54,7 +54,7 @@ body, html{
     width: 500px;
     color: var(--primary-color);
     background-color: var(--second-color);
-    box-shadow: 0 0 5px var(--four-color);
+    box-shadow: 0 0 1px var(--four-color);
     display: flex;
     justify-content: center;
     align-items: center;
