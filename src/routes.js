@@ -10,9 +10,9 @@ router.get('/', homePageController);
 router.get('/login', loginPageController);
 router.post('/authenticate', loginPageController);
 router.get('/logout', loginPageController);
-router.get('/login/morador/perfil', moradorPagePerfilController);
-router.get('/login/administrador/perfil', admPagePerfilController);
 router.get('/create', create);
 router.post('/create/user', create);
+router.get('/login/morador/perfil', moradorPagePerfilController);
+router.get('/login/administrador/perfil', admPagePerfilController);
 
 module.exports = router;

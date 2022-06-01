@@ -12,6 +12,7 @@
         "@database/*": ["src/database/*"],
         "@public/*": ["src/public/*"],
         "@model/*": ["src/model/*"],
+        "@middleware/*": ["src/middleware/*"],
       }
     },
     "exclude": ["node_modules", "dist"]

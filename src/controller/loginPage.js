@@ -2,12 +2,16 @@ const express = require("express")
 const router = express.Router()
 const UserAuth = require("@model/loginModel")
 const bcrypt = require('bcryptjs');
+const flash = require('connect-flash');
+
 
 router.get('/login', (req, res) => {
-    res.render("home/login")
+
+    res.render("home/login", { message: ""});
 })
 
 router.post('/authenticate', (req, res) => {
+    
     var nivelAcesso = req.body.nivelAcesso;
     var idUser = req.body.login;
     var senha = req.body.senha;
@@ -19,15 +23,16 @@ router.post('/authenticate', (req, res) => {
                 var correctSenha = bcrypt.compareSync(senha, user.senha);
                 if(correctSenha){
                     req.session.user = {
+                        id: user.id,
                         idUser: user.idUser,
                         nivelAcesso: user.nivelAcesso
                     }
                 res.redirect(`/login/${nivelAcesso}/perfil`);
             }else{
-                res.redirect("/login");
+                res.redirect('/login');
             }
         } else {
-            res.redirect("/login");
+            res.redirect('/login');
         }
     })
 })

@@ -31,6 +31,11 @@
                 <input type="submit" value="Entrar"/>
               </div>
             </form>
+
+            <%if(message!=''){ %>
+              <%=message%>
+            <%}%>
+            
             <p>
               <a href="/users/forgot" id="esqueceu-senha">Esqueceu sua senha?</a>
             </p>
