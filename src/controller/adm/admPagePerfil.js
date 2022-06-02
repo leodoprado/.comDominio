@@ -4,10 +4,12 @@ const dadosConta = require("@model/loginModel");
 const accessValidation = require("@middleware/accessValidation");
 
 router.get('/login/administrador/perfil', accessValidation ,(req, res) => {
-    dadosConta.findAll({
-        attributes: ['idUser', "nivelAcesso"]
-    }).then(function(dados){
+    const session = req.session.user
+    dadosConta.findOne({where:{ idUser: session.idUser,  nivelAcesso: session.nivelAcesso }}).then(function(dados){
         res.render("log/adm/perfilAdministrador", {dados: dados})
+        // Debugando
+        // console.log(dados.idUser)
+        // console.log(session.nivelAcesso)
     });
 });
 

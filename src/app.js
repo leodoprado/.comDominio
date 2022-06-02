@@ -11,7 +11,8 @@ const flash = require('connect-flash');
 // Sessions
 app.use(session({
     secret: "AJSasnakAJSNAJDa3231nsdn",
-    cookie: { maxAge: 432000000 }
+    cookie: { maxAge: 432000000 },
+    secure: false
 }))
 
 app.use(flash());
