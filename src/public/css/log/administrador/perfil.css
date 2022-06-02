@@ -149,6 +149,7 @@ input[type='file']{
     height: 25px;
     box-shadow: 0 0 1px var(--third-color);
     margin-left: 20px;
+    text-align: center;
 }
 
 .dados-pessoais {
@@ -164,23 +165,43 @@ input[type='file']{
 }
 
 #input-data-nascimento {
-    width: 100px;
+    width: 123px;
 }
 
 #label-rg {
     margin-left: 62px;
 }
 
-#input-email {
-    width: 400px;
+#input-estadocivil {
+    width: 150px;
 }
 
-#input-telefone {
+#input-sexo {
+    width: 80px;
+}
+
+#label-sexo {
+    margin-left: 93px;
+}
+
+#input-nacionalidade {
+    width: 160px;
+}
+
+#label-cidadenatal {
+    margin-left: 60px;
+}
+
+#input-cidadenatal {
     width: 200px;
 }
 
-#label-telefone2 {
-    margin-left: 60px;
+#label-estado {
+    margin-left: 40px;
+}
+
+#input-estado {
+    width: 40px;
 }
 
 /*///////////////////////////////////////*/
@@ -210,50 +231,27 @@ hr {
     height: 25px;
     box-shadow: 0 0 1px var(--third-color);
     margin-left: 20px;
+    text-align: center;
 }
 
 .contato {
     margin-top: 40px;
 }
 
-#input-endereco {
-    width: 430px;
+#input-email {
+    width: 395px;
 }
 
-#label-numero {
+#label-emailcomplementar {
     margin-left: 60px;
 }
 
-#input-numero {
-    width: 60px;
-}
-
-#label-complemento {
-    margin-left: 60px;
-}
-
-#input-complemento {
+#input-telefone {
     width: 200px;
 }
 
-#input-cidade {
-    width: 300px;
-}
-
-#label-estado {
-    margin-left: 60px;
-}
-
-#input-estado {
-    width: 30px;
-}
-
-#label-pais {
-    margin-left: 60px;
-}
-
-#input-pais {
-    width: 130px;
+#label-telefone2 {
+    margin-left: 100px;
 }
 
 #btn-cancelar {
