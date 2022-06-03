@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const connection = require("@database/db");
 
-const UserAuth = connection.define('user-auth', {
+const PerfilUser = connection.define('perfil-user', {
     nivelAcesso:{
         type: Sequelize.STRING,
         allowNull: false
@@ -68,6 +68,6 @@ const UserAuth = connection.define('user-auth', {
 })
 
 // Sincronizando o model com o banco de dados
-UserAuth.sync({force: false});
+// PerfilUser.sync({force: false});
 
-module.exports = UserAuth;
+module.exports = PerfilUser;

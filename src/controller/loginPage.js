@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const UserAuth = require("@model/loginModel")
+const UserAuth = require("@model/perfilModel")
 const bcrypt = require('bcryptjs');
 const flash = require('connect-flash');
 
