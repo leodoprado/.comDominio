@@ -12,7 +12,7 @@ router.post('/authenticate', loginPageController);
 router.get('/logout', loginPageController);
 router.get('/create', create);
 router.post('/create/user', create);
-router.get('/login/morador/perfil', moradorPagePerfilController);
-router.get('/login/administrador/perfil', admPagePerfilController);
+router.get('/login/administrador/perfil/:id', admPagePerfilController);
+router.post('/login/administrador/perfil/:id', admPagePerfilController)
 
 module.exports = router;

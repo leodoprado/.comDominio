@@ -1,34 +1,50 @@
 const express = require("express")
 const router = express.Router()
-const dadosConta = require("@model/perfilModel");
 const accessValidation = require("@middleware/accessValidation");
+const PerfilUser = require("@model/perfilModel");
 
-router.get('/login/administrador/perfil', accessValidation ,(req, res) => {
+router.get('/login/administrador/perfil/:id', accessValidation ,(req, res) => {
     const session = req.session.user
-    dadosConta.findOne({where:{ idUser: session.idUser,  nivelAcesso: session.nivelAcesso }}).then(function(dados){
-        res.render("log/adm/perfilAdministrador", {dados: dados})
-        // Debugando
-        // console.log(dados.idUser)
-        // console.log(session.nivelAcesso)
-    });
+
+    id = req.params.id;
+    res.cookie('id', id, {expire: new Date()+10*60*1000})
+
+    PerfilUser.findOne({where: {id: id, idUser: session.idUser,  nivelAcesso: session.nivelAcesso}}).then(function(result){
+        if(!result) {
+            res.redirect('/login')
+        } else {
+            res.render('log/adm/perfilAdministrador', { result: result})
+        }
+    })
 });
 
-router.post('/login/administrador/perfil/save', accessValidation, (req, res) => {
-    // definindo as variaveis que vão ser pegas do formulário
-    var nome = req.body.nome;
-    var datanascimento = req.body.datanascimento;
-    var cpf = req.body.cpf;
-    var rg = req.body.rg;
-    var estadocivil = req.body.estadocivil;
-    var sexo = req.body.sexo;
-    var pais = req.body.pais;
-    var cidadenatal = req.body.cidadenatal;
-    var estado = req.body.estado;
+router.post('/login/administrador/perfil/:id', (req, res) => {
+    /*const nome = req.body.nome
 
-    var email = req.body.email;
-    var emailcomplementar = req.body.email;
-    var telefone1 = req.body.telefone1;
-    var telefone2 = req.body.telefone2;
+    PerfilUser.create (
+        { nome },
+        {
+            where: { id: req.params.id },
+        }
+    ).then(() => {
+        res.redirect("/login/administrador/perfil")
+    })*/
+
+    id = req.cookies.id;
+    nome = req.body.nome;
+
+    if(nome !== ''){
+        PerfilUser.update({
+            nome: nome
+        },
+        {
+            where: {id : id}
+        });
+        res.clearCookie('id');
+        res.redirect('/login/administrador/perfil');
+    } else {
+        res.render('log/adm/perfilAdministrador', { result : req.body})
+    }
 })
 
 module.exports = router;

@@ -27,7 +27,7 @@ router.post('/authenticate', (req, res) => {
                         idUser: user.idUser,
                         nivelAcesso: user.nivelAcesso
                     }
-                res.redirect(`/login/${nivelAcesso}/perfil`);
+                res.redirect(`/login/${nivelAcesso}/perfil/${user.id}`);
             }else{
                 res.redirect('/login');
             }
