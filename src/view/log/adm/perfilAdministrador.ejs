@@ -9,61 +9,61 @@
 </head>
 <body>
     <%- include('../../partials/menu.ejs') %> 
-    <div class="container">
-        <div class="container-conteudo">
-            <div class="conteudo">
-                <div class="conteudo-dados-da-conta">
-                    <div class="max-width">
+    <form action="/login/administrador/perfil/:id" method="post">
+        <div class="container">
+            <div class="container-conteudo">
+                <div class="conteudo">
+                    <div class="conteudo-dados-da-conta">
                         <div class="imageContainer">
-                            <img src="/img/log/adm/foto-background.png" alt="Selecione uma imagem" id="imgPhoto">
+                            <div class="image">
+                                <img src="/img/log/adm/foto-background.png" alt="Selecione uma imagem" id="imgPhoto">
+                                <input type="file" id="flImage" name="fImage" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="dados-da-conta">
+                            <label for="" >ID Morador: <input disabled value=<%= result.idUser %> class="inputs-ddc" type="text" id="idmorador"></label>
+                            <label for="" >Senha: <input disabled class="inputs-ddc" type="password" id="senha" placeholder="***********"></label>
+                            <label for="" >Nível de acesso: <input disabled value=<%= result.nivelAcesso %> class="inputs-ddc" id="nivelacesso"></label>
                         </div>
                     </div>
-                    <form action="">
-                        <input type="file" id="flImage" name="fImage" accept="image/*">
-                    </form>
-                    <div class="dados-da-conta">
-                        <label for="">ID Morador: <input type="text" id="idmorador" disabled value=<%- result.idUser %>></label>
-                        <label for="">Senha: <input type="password" id="senha" placeholder="**********" disabled></label>
-                        <label for="">Nível de acesso: <input type="text" id="nivelacesso" disabled value=<%- result.nivelAcesso %>></label>
+                    <div class="conteudo-dados-pessoais">
+                        <h4>Dados Pessoais</h4>
+                        <hr>
+                        <div class="dados-pessoais">
+                            <label for="">Nome: <input value=<%= result.nome %> name="nome" id="input-nome" type="text"></label>
+                            <label for="" id="label-datanasc">Data de Nascimento: <input value=<%= result.datanascimento %> id="input-datanasc" type="text"></label>
+                        </div>
+                        <div class="dados-pessoais">
+                            <label for="">CPF: <input value=<%= result.cpf%> name="cpf" id="input-cpf" type="text"></label>
+                            <label for="" id="label-rg">RG: <input value=<%= result.rg %> name="rg" id="input-rg" type="text"></label>
+                        </div>
+                        <div class="dados-pessoais">
+                            <label for="">Estado Civil: <input value=<%= result.estadocivil %> name="estadocivil" id="input-estadocivil" type="text"></label>
+                            <label for="" id="label-sexo">Sexo: <input value=<%= result.sexo %> name="sexo" id="input-sexo" type="text"></label>
+                        </div>
+                        <div class="dados-pessoais">
+                            <label for="">País: <input value=<%= result.pais %> name="pais" type="text" id="input-nacionalidade"></label>
+                            <label for="" id="label-cidadenatal">Cidade Natal: <input value=<%= result.cidadenatal %> name="cidadenatal" type="text" id="input-cidadenatal"></label>
+                            <label for="" id="label-estado">UF: <input value=<%= result.estado %> name="estado" type="text" id="input-estado"></label>
+                        </div>
                     </div>
                 </div>
-                <div class="conteudo-dados-pessoais">
-                    <h4>Dados Pessoais</h4>
-                    <hr>
-                    <div class="dados-pessoais">
-                        <label for="">Nome: <input name="nome" type="text" id="input-nome"></label>
-                        <label for="" id="label-data-nascimento">Data de Nascimento: <input name="datanascimento" id="input-data-nascimento" type="text"></label>
-                    </div>
-                    <div class="dados-pessoais">
-                        <label for="">CPF: <input name="cpf" type="text" id="input-cpf"></label>
-                        <label for="" id="label-rg">RG: <input name="rg" id="" type="text"></label>
-                    </div>
-                    <div class="dados-pessoais">
-                        <label for="">Estado Civil: <input name="estadocivil" type="text" id="input-estadocivil"></label>
-                        <label for="" id="label-sexo">Sexo: <input name="sexo" type="text" id="input-sexo"></label>
-                    </div>
-                    <div class="dados-pessoais">
-                        <label for="">País: <input name="pais" type="text" id="input-nacionalidade"></label>
-                        <label for="" id="label-cidadenatal">Cidade Natal: <input name="cidadenatal" type="text" id="input-cidadenatal"></label>
-                        <label for="" id="label-estado">UF: <input name="estado" type="text" id="input-estado"></label>
-                    </div>
+                <div class="conteudo-contatos">
+                    <h4 id="titulo-contatos">Contatos</h4>
+                        <hr>
+                        <div class="contato">
+                            <label for="">Email: <input value=<%= result.email %> name="email" type="text" id="input-email"></label>
+                            <label for="" id="label-emailcomplementar">Email (complementar): <input value=<%= result.emailcomplementar %> name="emailcomplementar" id="input-email" type="text"></label>                    </div>
+                        <div class="contato">
+                            <label for="">Telefone 1: <input value=<%= result.telefone1 %> name="telefone1" type="text" class="input-telefone"></label>
+                            <label for="" id="label-telefone2">Telefone 2: <input value=<%= result.telefone2 %> name="telefone2" class="input-telefone" type="text"></label>
+                            <button type="reset" id="btn-cancelar">Cancelar</button>
+                            <button type="submit" id="btn-salvar" >Atualizar</button>
+                        </div>
                 </div>
             </div>
-                <div class="conteudo-contato">
-                    <h4>Contatos</h4>
-                    <hr>
-                    <div class="contato">
-                        <label for="">Email: <input name="email" type="text" id="input-email"></label>
-                        <label for="" id="label-emailcomplementar">Email (complementar): <input name="emailcomplementar" id="input-email" type="text"></label>                    </div>
-                    <div class="contato">
-                        <label for="">Telefone 1: <input name="telefone1" type="text" class="input-telefone"></label>
-                        <label for="" id="label-telefone2">Telefone 2: <input name="telefone2" class="input-telefone" type="text"></label>
-                        <button type="" id="btn-cancelar">Cancelar</button>
-                        <button type="" id="btn-salvar" >Salvar</button>
-                    </div>
-                </div>
         </div>
-
+    </form>
     <script src="/js/log/adm/foto-perfil.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
     <script src="/js/log/adm/jquery.mask.js"></script>

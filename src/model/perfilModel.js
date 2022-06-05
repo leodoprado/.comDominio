@@ -18,7 +18,7 @@ const PerfilUser = connection.define('perfil-user', {
         allowNull: true
     },
     datanascimento: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: true
     },
     cpf: {
@@ -26,7 +26,7 @@ const PerfilUser = connection.define('perfil-user', {
         allowNull: true
     },
     rg: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: true
     },
     estadocivil: {
@@ -34,7 +34,7 @@ const PerfilUser = connection.define('perfil-user', {
         allowNull: true
     },
     sexo: {
-        type: Sequelize.CHAR,
+        type: Sequelize.STRING,
         allowNull: true
     },
     pais: {
@@ -63,11 +63,12 @@ const PerfilUser = connection.define('perfil-user', {
     }, 
     telefone2: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
+        
     }
 })
 
 // Sincronizando o model com o banco de dados
-// PerfilUser.sync({force: false});
+ PerfilUser.sync({force: false});
 
 module.exports = PerfilUser;

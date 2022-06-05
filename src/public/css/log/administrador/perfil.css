@@ -12,8 +12,8 @@
     --gap: 1.5rem;
 }
 
-*{
-	margin: 0;
+* {
+    margin: 0;
 	padding: 0;
     box-sizing: border-box;
     border: none;
@@ -23,8 +23,22 @@
 	appearance: none;
 	font-family: var(--second-font), Times, serif;
 }
-body, html{
-	overflow-x: hidden;
+
+textarea:focus, input:focus, select:focus {
+    border: 0 none;
+    outline: 0;
+} 
+
+input {
+    text-align: center;
+}
+
+label {
+    color: var(--primary-color);
+}
+
+h4 {
+    color: var(--primary-color);
 }
 
 .container {
@@ -37,10 +51,6 @@ body, html{
     align-items: center;
 }
 
-.conteudo {
-    display: flex;
-}
-
 .container-conteudo {
     width: 90%;
     height: 90%;
@@ -51,65 +61,43 @@ body, html{
 }
 
 .conteudo-dados-da-conta {
-    width: 500px;
+    width: 350px;
+    height: 330px;
     color: var(--primary-color);
     background-color: var(--second-color);
-    box-shadow: 0 0 1px var(--four-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 15px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 10px;
+    box-shadow: 0 0 2px rgb(199, 192, 192);
 }
 
 .dados-da-conta {
-    margin-top: 15px;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    flex-direction: row;
+    align-items: flex-end;
     flex-wrap: wrap;
+    margin: 25px;
+    padding-top: 10px;
 }
 
-textarea:focus, input:focus, select:focus {
-    border: 0 none;
-    outline: 0;
-} 
-
-form input, form label, form button {
-    display: block;
-    width: 100%;
-    margin-bottom: 5px;
-}
-
-.dados-da-conta input {
-    width: 155px;
+.inputs-ddc {
+    width: 150px;
     font-size: 18px;
     height: 25px;
     box-shadow: 0 0 1px var(--third-color);
     margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 .dados-da-conta input:focus {
     box-shadow: 0 0 3px var(--primary-color);
 }
 
-#idmorador {
-    margin-top: 5px;
-}
-
-.inputs-dados-da-conta label, input {
-    margin-bottom: 10px;
-}
-
-input[type='file']{
-    display: none;
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #imgPhoto {
+    margin-top: 20px;
     width: 150px;
     height: 150px;
     padding: 4px;
@@ -126,19 +114,30 @@ input[type='file']{
     background-color: rgb(221, 221, 221);
 }
 
-/*///////////////////////////////////////*/
-
-.conteudo-dados-pessoais {
-    width: 100%;
-    color: var(--primary-color);
-    padding-left: 20px;
+input[type='file']{
+    display: none;
 }
 
-.dados-pessoais input:focus {
-    box-shadow: 0 0 3px var(--primary-color);
+
+/* ---------- Dados Pessoais ---------- */
+
+hr {
+    margin: 2px 0 5px;
+    border-top: 1px solid rgb(199, 192, 192);
+}
+
+.conteudo {
+    display: flex;
+}
+
+.conteudo-dados-pessoais {
+    width: 70%;
+    color: var(--primary-color);
+    padding-left: 25px;
 }
 
 .dados-pessoais {
+    margin-top: 48px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -149,39 +148,42 @@ input[type='file']{
     height: 25px;
     box-shadow: 0 0 1px var(--third-color);
     margin-left: 20px;
-    text-align: center;
 }
 
-.dados-pessoais {
-    margin-top: 40px;
+.dados-pessoais input:focus {
+    box-shadow: 0 0 3px var(--primary-color);
 }
 
 #input-nome {
-    width: 270px;
+    width: 280px;
 }
 
-#label-data-nascimento {
-    margin-left: 90px;
+#label-datanasc {
+    margin-left: 80px;
 }
 
-#input-data-nascimento {
-    width: 123px;
+#input-datanasc {
+    width: 120px;
+}
+
+#input-cpf{
+    width: 250px;
 }
 
 #label-rg {
-    margin-left: 62px;
+    margin-left: 80px;
 }
 
 #input-estadocivil {
-    width: 150px;
-}
-
-#input-sexo {
-    width: 80px;
+    width: 170px;
 }
 
 #label-sexo {
-    margin-left: 93px;
+    margin-left: 80px;
+}
+
+#input-sexo {
+    width: 180px;
 }
 
 #input-nacionalidade {
@@ -204,17 +206,17 @@ input[type='file']{
     width: 40px;
 }
 
-/*///////////////////////////////////////*/
+/* ---------- Contatos ---------- */
+
 
 .conteudo-contato {
     color: var(--primary-color);
-    margin-top: 25px;
 }
 
-hr {
-    margin: 2px 0 5px;
-    border-top: 1px solid #eee;
+#titulo-contatos{
+    margin-top: 18px;
 }
+
 
 .contato {
     display: flex;
@@ -259,14 +261,15 @@ hr {
     font-family: var(--primary-font);
     background: var(--primary-color);
     color: #fff;
+    border-radius: 50px;
     font-size: 18px;
     font-weight: 700;
     height: 40px;
-    width: 100px;
+    width: 120px;
     cursor: pointer;
     opacity: 0.9;
     padding: 2px;
-    margin-left: 110px;
+    margin-left: 90px;
 }
 
 #btn-cancelar:hover{
@@ -281,14 +284,15 @@ hr {
     font-family: var(--primary-font);
     background: var(--primary-color);
     color: #fff;
+    border-radius: 50px;
     font-size: 18px;
     font-weight: 700;
     height: 40px;
-    width: 100px;
+    width: 120px;
     cursor: pointer;
     opacity: 0.9;
     padding: 2px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 #btn-salvar:hover{

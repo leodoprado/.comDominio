@@ -11,7 +11,7 @@ router.get('/login/administrador/perfil/:id', accessValidation ,(req, res) => {
 
     PerfilUser.findOne({where: {id: id, idUser: session.idUser,  nivelAcesso: session.nivelAcesso}}).then(function(result){
         if(!result) {
-            res.redirect('/login')
+            res.redirect(`/login`)
         } else {
             res.render('log/adm/perfilAdministrador', { result: result})
         }
@@ -19,29 +19,45 @@ router.get('/login/administrador/perfil/:id', accessValidation ,(req, res) => {
 });
 
 router.post('/login/administrador/perfil/:id', (req, res) => {
-    /*const nome = req.body.nome
 
-    PerfilUser.create (
-        { nome },
-        {
-            where: { id: req.params.id },
-        }
-    ).then(() => {
-        res.redirect("/login/administrador/perfil")
-    })*/
+    nome = req.body.nome
+    datanascimento = req.body.datanascimento
+    cpf = req.body.cpf;
+    rg = req.body.rg;
+    estadocivil = req.body.estadocivil;
+    sexo = req.body.sexo;
+    pais = req.body.pais;
+    cidadenatal = req.body.cidadenatal;
+    estado = req.body.estado;
+    email = req.body.email;
+    emailcomplementar = req.body.emailcomplementar;
+    telefone1 = req.body.telefone1;
+    telefone2 = req.body.telefone2;
 
-    id = req.cookies.id;
-    nome = req.body.nome;
+    console.log(nome)
 
-    if(nome !== ''){
+    if(req.body !== ''){
         PerfilUser.update({
-            nome: nome
+            nome: nome,
+            datanascimento: datanascimento,
+            cpf: cpf,
+            rg : rg,
+            estadocivil : estadocivil,
+            sexo : sexo,
+            pais : pais,
+            cidadenatal : cidadenatal,
+            estado: estado,
+            email : email,
+            emailcomplementar : emailcomplementar,
+            telefone1 : telefone1,
+            telefone2 : telefone2
         },
         {
             where: {id : id}
         });
+        console.log(nome)
         res.clearCookie('id');
-        res.redirect('/login/administrador/perfil');
+        res.redirect('/login/administrador/perfil/:id');
     } else {
         res.render('log/adm/perfilAdministrador', { result : req.body})
     }
