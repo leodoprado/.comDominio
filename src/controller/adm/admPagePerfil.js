@@ -11,7 +11,7 @@ router.get('/login/administrador/perfil/:id', accessValidation ,(req, res) => {
 
     PerfilUser.findOne({where: {id: id, idUser: session.idUser,  nivelAcesso: session.nivelAcesso}}).then(function(result){
         if(!result) {
-            res.redirect(`/login`)
+            res.redirect(`/login/Administrador/perfil/:id`)
         } else {
             res.render('log/adm/perfilAdministrador', { result: result})
         }

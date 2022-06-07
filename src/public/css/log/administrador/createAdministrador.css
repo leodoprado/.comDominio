@@ -35,10 +35,22 @@ input {
 
 label {
     color: var(--primary-color);
+    font-size: 17px;
 }
 
-h4 {
+input:focus {
+    box-shadow: 0 0 3px var(--primary-color);
+}
+
+h1 {
+    text-align: center;
+    font-family: var(--second-font);
     color: var(--primary-color);
+}
+
+hr {
+    margin: 2px 0 5px;
+    border-top: 1px solid rgb(199, 192, 192);
 }
 
 .container {
@@ -60,214 +72,129 @@ h4 {
     padding: 20px;
 }
 
-.conteudo-dados-da-conta {
-    width: 350px;
-    height: 330px;
-    color: var(--primary-color);
-    background-color: var(--second-color);
-    box-shadow: 0 0 2px rgb(199, 192, 192);
-}
-
-.dados-da-conta {
+.conteudo {
+    margin-top: 20px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin: 25px;
-    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
 }
 
-.inputs-ddc {
+.radio {
+    padding-top: 20px;
+}
+
+.conteudo-dados-pessoais {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.conteudo-dados-da-conta {
+    padding-left: 100px;
+}
+
+.custom-radio {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.custom-radio input {
+    display: none;
+}
+
+.custom-radio label {
+    font-family: var(--primary-font);
+    font-weight: bold;
+}
+
+.custom-radio input + label:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-bottom: 3px;
+  }
+  
+  .custom-radio input:checked + label:before {
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+
+    padding: 8px;
+  }
+
+ .radio-1 {
+      padding-right: 50px;
+  }
+
+  .inputs-ddc {
     width: 150px;
     font-size: 18px;
     height: 25px;
     box-shadow: 0 0 1px var(--third-color);
     margin-left: 30px;
     margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .dados-da-conta input:focus {
     box-shadow: 0 0 3px var(--primary-color);
 }
 
-.imageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#imgPhoto {
-    margin-top: 20px;
-    width: 150px;
-    height: 150px;
-    padding: 4px;
-    box-shadow: 0 0 5px var(--third-color);
-    border-radius: 50%;
-    background-color: var(--second-color);
-    cursor: pointer;
-    transition: 1s;
-}
-
-#imgPhoto:hover {
-    box-shadow: 0 0 5px var(--third-color);
-    border-radius: 50%;
-    background-color: rgb(221, 221, 221);
-}
-
-input[type='file']{
-    display: none;
-}
-
-
-/* ---------- Dados Pessoais ---------- */
-
-hr {
-    margin: 2px 0 5px;
-    border-top: 1px solid rgb(199, 192, 192);
-}
-
-.conteudo {
-    display: flex;
-}
-
-.conteudo-dados-pessoais {
-    width: 70%;
-    color: var(--primary-color);
-    padding-left: 25px;
-}
-
-.dados-pessoais {
-    margin-top: 48px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.dados-pessoais input {
-    font-size: 18px;
+#input-senha-width {
+    width: 192px;
     height: 25px;
-    box-shadow: 0 0 1px var(--third-color);
-    margin-left: 20px;
 }
 
-.dados-pessoais input:focus {
-    box-shadow: 0 0 3px var(--primary-color);
+#input-id-width {
+    width: 155px;
+    height: 25px;
 }
 
 #input-nome {
-    width: 280px;
-}
-
-#label-datanasc {
-    margin-left: 80px;
+    width: 300px;
+    height: 25px;
 }
 
 #input-datanasc {
     width: 120px;
-}
-
-#input-cpf{
-    width: 250px;
-}
-
-#label-rg {
-    margin-left: 80px;
-}
-
-#input-estadocivil {
-    width: 170px;
-}
-
-#label-sexo {
-    margin-left: 80px;
-}
-
-#input-sexo {
-    width: 180px;
-}
-
-#input-nacionalidade {
-    width: 160px;
-}
-
-#label-cidadenatal {
-    margin-left: 60px;
-}
-
-#input-cidadenatal {
-    width: 200px;
-}
-
-#label-estado {
-    margin-left: 40px;
-}
-
-#input-estado {
-    width: 40px;
-}
-
-/* ---------- Contatos ---------- */
-
-
-.conteudo-contato {
-    color: var(--primary-color);
-}
-
-#titulo-contatos{
-    margin-top: 18px;
-}
-
-
-.contato {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.contato input:focus {
-    box-shadow: 0 0 3px var(--primary-color);
-}
-
-.contato input {
-    font-size: 18px;
     height: 25px;
-    box-shadow: 0 0 1px var(--third-color);
-    margin-left: 20px;
-    text-align: center;
 }
 
-.contato {
-    margin-top: 40px;
+#input-cpf {
+    width: 250px;
+    height: 25px;
 }
 
 #input-email {
     width: 395px;
-}
-
-#label-emailcomplementar {
-    margin-left: 60px;
+    height: 25px;
 }
 
 #input-telefone {
     width: 200px;
+    height: 25px;
 }
 
-#label-telefone2 {
-    margin-left: 100px;
-}
-
-#btn-cancelar {
+#btn-voltar {
     border: none;
     font-family: var(--second-font);
     background: var(--primary-color);
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     height: 40px;
-    width: 125px;
+    width: 160px;
     cursor: pointer;
     opacity: 0.9;
-    margin-left: 77px;
     padding: 2px;
     text-transform: uppercase;
     border-radius: 5px;
@@ -277,25 +204,25 @@ hr {
     -webkit-transition-property: box-shadow, transform;
 }
 
-#btn-cancelar:hover, #btn-cancelar:focus {
+#btn-voltar:hover, #btn-voltar:focus, #btn-voltar:active {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-#btn-salvar {
+#btn-cadastrar {
     border: none;
     font-family: var(--second-font);
     background: var(--primary-color);
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     height: 40px;
-    width: 125px;
+    width: 160px;
     cursor: pointer;
     opacity: 0.9;
+    padding: 2px;
     margin-left: 20px;
-    padding: 2px;
     text-transform: uppercase;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -304,8 +231,15 @@ hr {
     -webkit-transition-property: box-shadow, transform;
 }
 
-#btn-salvar:hover, #btn-salvar:focus {
+#btn-cadastrar:hover, #btn-cadastrar:focus, #btn-cadastrar:active {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+.container-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
 }

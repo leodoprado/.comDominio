@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Carter+One&family=Livvic:wght@400;500;600;700&family=Nunito:wght@400;500;700&family=Oxanium:wght@800&display=swap');
+
+:root {
+    --primary-color: rgb(8, 37, 103);
+    --second-color: rgb(255, 255, 255);
+    --third-color: #5072A7;
+    --four-color: rgb(224, 224, 224);
+    --primary-font: "Nunito", sans serif;
+    --second-font: "Livvic", sans serif;
+    --third-font: "Carter One", sans serif;
+    --logo-font: "Bakbak One", sans serif;
+    --gap: 1.5rem;
+}
+
+* {
+    margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+    border: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	appearance: none;
+	font-family: var(--second-font), Times, serif;
+}
+
+textarea:focus, input:focus, select:focus {
+    border: 0 none;
+    outline: 0;
+} 
+
+input {
+    text-align: center;
+}
+
+label {
+    color: var(--primary-color);
+}
+
+h4 {
+    color: var(--primary-color);
+}
+
+table, th, td {
+    border: 1px solid var(--third-color);
+    border-collapse: collapse;
+    text-align: center;
+    padding: 20px;
+}
+
+th {
+    color: var(--third-color);
+}
+
+td {
+    color: black;
+}
+
+.container {
+    width: 100%;
+	height: 100vh;
+	background: var(--second-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-conteudo {
+    width: 90%;
+    height: 90%;
+    margin-left: 70px;
+    background-color: var(--second-color);
+    box-shadow: 0 0 1px var(--third-color);
+    padding: 20px;
+}
+
+.container-tabela {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 428px;
+    margin: 15px;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#btn-cadastrar {
+    width: 350px;
+    height: 40px;
+    background-color: var(--third-color);
+    color: var(--second-color);
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.container-button {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
