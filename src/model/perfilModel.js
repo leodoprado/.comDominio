@@ -15,18 +15,15 @@ const PerfilUser = connection.define('perfil-user', {
     },
     nome: {
         type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue: "-"
+        allowNull: false
     },
     datanascimento: {
         type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue: "00/00/0000"
+        allowNull: false
     },
     cpf: {
         type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue: "000-000-000.00"
+        allowNull: false
     },
     rg: {
         type: Sequelize.INTEGER,
@@ -70,8 +67,7 @@ const PerfilUser = connection.define('perfil-user', {
     },
     telefone1: {
         type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue: "(00)00000-0000"
+        allowNull: false
     }, 
     telefone2: {
         type: Sequelize.STRING,

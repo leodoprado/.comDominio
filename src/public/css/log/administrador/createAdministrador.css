@@ -72,6 +72,14 @@ hr {
     padding: 20px;
 }
 
+.container-conteudo a {
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
 .conteudo {
     margin-top: 20px;
     display: flex;

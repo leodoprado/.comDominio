@@ -20,5 +20,6 @@ router.get('/login/administrador/perfil/:id', admPagePerfilController);
 router.post('/login/administrador/perfil/:id', admPagePerfilController)
 router.get('/login/administrador/gerencial', admPageGerencialController);
 router.get('/login/administrador/gerencial/create', admPageCreateController);
+router.post('/login/administrador/gerencial/create/success', admPageCreateController);
 
 module.exports = router;
