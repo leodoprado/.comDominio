@@ -1,8 +1,11 @@
 const express = require("express")
 const router = express.Router()
+const PerfilUser = require("@model/perfilModel");
 
 router.get('/login/administrador/gerencial', (req, res) => {
-    res.render("log/adm/gerencialAdministrador")
+    PerfilUser.findAll().then(function(moradores){
+        res.render("log/adm/gerencialAdministrador", {moradores: moradores})
+    })
 })
 
 module.exports = router;

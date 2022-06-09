@@ -23,55 +23,15 @@
                             <th>Email</th>
                             <th>Telefone</th>
                         </tr>
-                        <tr>
-                            <td>Administrador</td>
-                            <td>Leonardo do Prado</td>
-                            <td>13/10/2002</td>
-                            <td>leonardodoprado231@gmail.com</td>
-                            <td>(54)99991-2440</td>
-                        </tr>
-                        <tr>
-                            <td>Morador</td>
-                            <td>Leonardo do Prado</td>
-                            <td>13/10/2002</td>
-                            <td>leonardodoprado231@gmail.com</td>
-                            <td>(54)99991-2440</td>
-                        </tr>
-                        <tr>
-                            <td>Morador</td>
-                            <td>Leonardo do Prado</td>
-                            <td>13/10/2002</td>
-                            <td>leonardodoprado231@gmail.com</td>
-                            <td>(54)99991-2440</td>
-                        </tr>
-                        <tr>
-                            <td>Morador</td>
-                            <td>Leonardo do Prado</td>
-                            <td>13/10/2002</td>
-                            <td>leonardodoprado231@gmail.com</td>
-                            <td>(54)99991-2440</td>
-                        </tr>
-                        <tr>
-                            <td>Morador</td>
-                            <td>Leonardo do Prado</td>
-                            <td>13/10/2002</td>
-                            <td>leonardodoprado231@gmail.com</td>
-                            <td>(54)99991-2440</td>
-                        </tr>
-                        <tr>
-                            <td>Morador</td>
-                            <td>Leonardo do Prado</td>
-                            <td>13/10/2002</td>
-                            <td>leonardodoprado231@gmail.com</td>
-                            <td>(54)99991-2440</td>
-                        </tr>
-                        <tr>
-                            <td>Morador</td>
-                            <td>Leonardo do Prado</td>
-                            <td>13/10/2002</td>
-                            <td>leonardodoprado231@gmail.com</td>
-                            <td>(54)99991-2440</td>
-                        </tr>
+                        <% moradores.forEach(all => { %>
+                            <tr>
+                                <td><%= all.nivelAcesso %></td>
+                                <td><%= all.nome %></td>
+                                <td><%= all.datanascimento %></td>
+                                <td><%= all.email %></td>
+                                <td><%= all.telefone1 %></td>
+                            </tr>
+                            <% }) %>
                     </table>
                 </div>
                 <div class="container-button">
