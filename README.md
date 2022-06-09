@@ -14,6 +14,7 @@
   * Connect-flash
 #
 **Referências de projetos:**
+  * TownSq
   * Condofy
   * Acolweb
   * Condomob
