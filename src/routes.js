@@ -3,10 +3,11 @@ const router = express.Router();
 const homePageController = require('./controller/homePage');
 const loginPageController = require('./controller/loginPage');
 const admPagePerfilController = require('./controller/adm/admPagePerfil');
-const admPageGerencialController = require('@controller/adm/admPageGerencial')
-const admPageCreateController = require('@controller/adm/admPageCreate')
-const moradorPagePerfilController = require('@controller/morador/moradorPagePerfil')
-const create = require('@controller/loginPage')
+const admPageGerencialController = require('@controller/adm/admPageGerencial');
+const admPageCreateController = require('@controller/adm/admPageCreate');
+const admPageDeleteController = require('@controller/adm/admPageDelete');
+const moradorPagePerfilController = require('@controller/morador/moradorPagePerfil');
+const create = require('@controller/loginPage');
 
 router.get('/', homePageController);
 router.get('/login', loginPageController);
@@ -21,5 +22,6 @@ router.post('/login/administrador/perfil/:id', admPagePerfilController)
 router.get('/login/administrador/gerencial', admPageGerencialController);
 router.get('/login/administrador/gerencial/create', admPageCreateController);
 router.post('/login/administrador/gerencial/create/success', admPageCreateController);
+router.get('/login/administrador/gerencial/delete', admPageDeleteController);
 
 module.exports = router;

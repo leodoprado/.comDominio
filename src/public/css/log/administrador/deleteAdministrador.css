@@ -31,14 +31,20 @@ textarea:focus, input:focus, select:focus {
 
 input {
     text-align: center;
+    box-shadow: 0 0 1px var(--third-color);
+    width: 150px;
+    font-size: 18px;
+    height: 25px;
+    margin-left: 20px;
 }
 
 label {
     color: var(--primary-color);
+    font-size: 17px;
 }
 
-h4 {
-    color: var(--primary-color);
+input:focus {
+    box-shadow: 0 0 3px var(--primary-color);
 }
 
 h1 {
@@ -52,19 +58,13 @@ hr {
     border-top: 1px solid rgb(199, 192, 192);
 }
 
-table, th, td {
-    border: 1px solid var(--third-color);
-    border-collapse: collapse;
-    text-align: center;
-    padding: 20px;
-}
-
-th {
-    color: var(--third-color);
-}
-
-td {
-    color: black;
+a {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--second-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -86,41 +86,26 @@ td {
     padding: 20px;
 }
 
-.container-conteudo a {
-    text-decoration: none;
-    text-align: center;
+.conteudo-idusuario {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
 }
 
-.container-tabela {
-    overflow: scroll;
-    overflow-x: hidden;
-    height: 380px;
-    margin: 15px;
-}
-
-.conteudo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-}
-
-#btn-cadastrar {
+#btn-buscar {
     border: none;
     font-family: var(--second-font);
     background: var(--primary-color);
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
-    height: 40px;
-    width: 200px;
+    height: 35px;
+    width: 100px;
     cursor: pointer;
     opacity: 0.9;
     padding: 2px;
-    margin-left: 20px;
+    margin-left: 30px;
     text-transform: uppercase;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -129,7 +114,63 @@ td {
     -webkit-transition-property: box-shadow, transform;
 }
 
-#btn-cadastrar:hover, #btn-cadastrar:focus, #btn-cadastrar:active {
+#btn-buscar:hover, #btn-buscar:focus, #btn-buscar:active {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.conteudo-dados {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#input-nome {
+    width: 300px;
+}
+
+.input-dados {
+    margin-top: 20px;
+}
+
+.container-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+#btn-voltar {
+    border: none;
+    font-family: var(--second-font);
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+    opacity: 0.9;
+    padding: 2px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+}
+
+#btn-voltar:hover, #btn-voltar:focus, #btn-voltar:active {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -143,7 +184,7 @@ td {
     font-size: 16px;
     font-weight: bold;
     height: 40px;
-    width: 200px;
+    width: 120px;
     cursor: pointer;
     opacity: 0.9;
     padding: 2px;
@@ -160,12 +201,4 @@ td {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-}
-
-.container-button {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
