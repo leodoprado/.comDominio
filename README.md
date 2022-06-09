@@ -3,10 +3,15 @@
 
 **Dependências do projeto:**
   * Express
+  * Express-session
   * Mysql2
   * Sequelize
-  * Dotenv
+  * BcryptJS
+  * EJS
+  * Body-parser
   * Module-alias
+  * Dotenv
+  * Connect-flash
 #
 **Referências de projetos:**
   * Condofy
