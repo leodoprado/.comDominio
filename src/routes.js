@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const homePageController = require('./controller/homePage');
 const loginPageController = require('./controller/loginPage');
+const esqueceusenhaPageController = require('@controller/loginPage');
 const admPagePerfilController = require('./controller/adm/admPagePerfil');
 const admPageGerencialController = require('@controller/adm/admPageGerencial');
 const admPageCreateController = require('@controller/adm/admPageCreate');

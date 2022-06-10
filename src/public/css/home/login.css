@@ -134,6 +134,10 @@ a {
     font-size: 14px;
 }
 
+#esqueceu-senha {
+    color: var(--primary-color);
+}
+
 #esqueceu-senha:hover {
     color: var(--second-color);
 }
