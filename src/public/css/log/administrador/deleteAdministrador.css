@@ -90,7 +90,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 #btn-buscar {
@@ -122,8 +122,8 @@ a {
 
 .conteudo-dados {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
     margin-top: 50px;
 }
@@ -135,10 +135,6 @@ a {
     flex-direction: column;
 }
 
-#input-nome {
-    width: 300px;
-}
-
 .input-dados {
     margin-top: 20px;
 }
@@ -147,7 +143,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 50px;
 }
 
 #btn-voltar {
@@ -201,4 +197,28 @@ a {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+#input-nivelacesso {
+    width: 220px;
+}
+
+#input-nome {
+    width: 280px;
+}
+
+#input-cpf{
+    width: 250px;
+}
+
+#input-datanascimento {
+    width: 120px;
+}
+
+#input-email {
+    width: 325px;
+}
+
+#input-telefone {
+    width: 200px;
 }
