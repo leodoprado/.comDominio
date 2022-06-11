@@ -7,6 +7,10 @@ const admPagePerfilController = require('./controller/adm/admPagePerfil');
 const admPageGerencialController = require('@controller/adm/admPageGerencial');
 const admPageCreateController = require('@controller/adm/admPageCreate');
 const admPageDeleteController = require('@controller/adm/admPageDelete');
+const admPageMoradiasController = require('@controller/adm/admPageMoradias')
+const admPageVincularMoradiasController = require('@controller/adm/admPageVincularMoradias');
+const admPageComunicadosController = require('@controller/adm/admPageComunicados');
+const admPageAgendaController = require('@controller/adm/admPageAgenda');
 const moradorPagePerfilController = require('@controller/morador/moradorPagePerfil');
 const create = require('@controller/loginPage');
 
@@ -24,5 +28,12 @@ router.get('/login/administrador/gerencial', admPageGerencialController);
 router.get('/login/administrador/gerencial/create', admPageCreateController);
 router.post('/login/administrador/gerencial/create/success', admPageCreateController);
 router.get('/login/administrador/gerencial/delete', admPageDeleteController);
+// router.delete gerencial
+router.get('/login/administrador/moradias', admPageMoradiasController);
+router.get('/login/administrador/moradias/vincular', admPageVincularMoradiasController);
+// rotas de moradias
+router.get('/login/administrador/comunicados', admPageComunicadosController);
+// rotas de comunicados
+router.get('/login/administrador/agenda', admPageAgendaController);
 
 module.exports = router;
