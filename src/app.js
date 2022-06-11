@@ -18,7 +18,7 @@ app.use(session({
 app.use(flash());
 
 // Declarando rotas
-const Routes = require('./routes');
+const Routes = require('./routes'); 
 
 // View engine
 app.set("views", "./src/view");
