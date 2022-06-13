@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const accessValidation = require("@middleware/accessValidation");
-const PerfilUser = require("@model/perfilModel");
+const PerfilUser = require("@model/usuarioModel");
 
 router.get('/login/morador/perfil/:id', accessValidation ,(req, res) => {
     const session = req.session.user

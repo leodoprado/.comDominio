@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const PerfilUser = require("@model/perfilModel");
+const PerfilUser = require("@model/usuarioModel");
 
 router.get('/login/administrador/gerencial', (req, res) => {
     PerfilUser.findAll().then(function(moradores){

@@ -1,24 +1,26 @@
 const express = require("express")
 const router = express.Router()
 const accessValidation = require("@middleware/accessValidation");
-const PerfilUser = require("@model/perfilModel");
+const Usuario = require("@model/usuarioModel");
 
-router.get('/login/administrador/perfil/:id', accessValidation ,(req, res) => {
+router.get('/login/administrador/perfil/:idUsuario', accessValidation ,(req, res) => {
     const session = req.session.user
 
-    id = req.params.id;
-    res.cookie('id', id, {expire: new Date()+10*60*1000})
+    idUsuario = req.params.idUsuario;
+    res.cookie('idUsuario', idUsuario, {expire: new Date()+10*60*1000})
 
-    PerfilUser.findOne({where: {id: id, idUser: session.idUser,  nivelAcesso: session.nivelAcesso}}).then(function(result){
+    Usuario.findOne({where: {idUsuario: idUsuario,  nivelAcesso: session.nivelAcesso}}).then(function(result){
         if(!result) {
-            res.redirect(`/login/Administrador/perfil/:id`)
+            res.redirect(`/login/Administrador/gerencial`)
         } else {
             res.render('log/adm/perfilAdministrador', { result: result})
         }
     })
 });
 
-router.post('/login/administrador/perfil/:id', (req, res) => {
+router.post('/login/administrador/perfil/:idUsuario', (req, res) => {
+
+    id = req.params.idUsuario;
 
     nome = req.body.nome
     datanascimento = req.body.datanascimento
@@ -37,7 +39,7 @@ router.post('/login/administrador/perfil/:id', (req, res) => {
     console.log(nome)
 
     if(req.body !== ''){
-        PerfilUser.update({
+        Usuario.update({
             nome: nome,
             datanascimento: datanascimento,
             cpf: cpf,
@@ -53,11 +55,11 @@ router.post('/login/administrador/perfil/:id', (req, res) => {
             telefone2 : telefone2
         },
         {
-            where: {id : id}
+            where: {idUsuario : idUsuario}
         });
         console.log(nome)
-        res.clearCookie('id');
-        res.redirect('/login/administrador/perfil/:id');
+        res.clearCookie('idUsuario');
+        res.redirect('/login/administrador/perfil/gerencial');
     } else {
         res.render('log/adm/perfilAdministrador', { result : req.body})
     }

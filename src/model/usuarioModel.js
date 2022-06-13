@@ -1,15 +1,17 @@
-const Sequelize = require("sequelize");
-const connection = require("@database/db");
+const Sequelize = require ('sequelize');
+const connection = require('@database/db');
 
-const PerfilUser = connection.define('perfil-user', {
-    nivelAcesso:{
+const Usuario = connection.define('usuario', {
+    idUsuario: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        primaryKey: true
+    },
+    senha: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    idUser:{
-        type: Sequelize.INTEGER,
-        allowNull: false
-    }, senha: {
+    nivelAcesso: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -28,7 +30,7 @@ const PerfilUser = connection.define('perfil-user', {
     rg: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: "0000000000"
+        defaultValue: "0"
     },
     estadocivil: {
         type: Sequelize.STRING,
@@ -76,7 +78,7 @@ const PerfilUser = connection.define('perfil-user', {
     }
 })
 
-// Sincronizando o model com o banco de dados
- PerfilUser.sync({force: false});
+// Sincronizando model com banco de dados
+Usuario.sync({force: false});
 
-module.exports = PerfilUser;
+module.exports = Usuario;

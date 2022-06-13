@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const UserAuth = require("@model/perfilModel");
+const Usuario = require("@model/usuarioModel");
 const bcrypt = require('bcryptjs');
 
 router.get('/login/administrador/gerencial/create', (req, res) => {
@@ -14,22 +14,22 @@ router.post('/login/administrador/gerencial/create/success', (req, res) => {
     var email = req.body.email;
     var telefone1 = req.body.telefone1;
     var nivelAcesso = req.body.nivelAcesso;
-    var idUser = req.body.idUser;
+    var idUsuario = req.body.idUsuario;
     var senha = req.body.senha;
 
-    UserAuth.findOne({where:{idUser: idUser}}).then(user => {
+    Usuario.findOne({where:{idUsuario: idUsuario}}).then(user => {
         if(user == undefined){
             var salt = bcrypt.genSaltSync(10);
             var hash = bcrypt.hashSync(senha, salt)
 
-            UserAuth.create({
+            Usuario.create({
                 nome: nome,
                 datanascimento: datanascimento,
                 cpf: cpf,
                 email: email,
                 telefone1: telefone1,
                 nivelAcesso: nivelAcesso,
-                idUser: idUser,
+                idUsuario: idUsuario,
                 senha: hash
             }).then(() => {
                 res.redirect("/login/administrador/gerencial/create")
@@ -37,7 +37,7 @@ router.post('/login/administrador/gerencial/create/success', (req, res) => {
                 res.redirect("/login/administrador/gerencial/create")
             });
         } else {
-            res.redirect("/login/administrador/perfil/:id");
+            res.redirect("/login/administrador/gerencial/create");
         }
     })
 })
