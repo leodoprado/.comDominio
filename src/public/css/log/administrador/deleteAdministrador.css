@@ -58,7 +58,7 @@ hr {
     border-top: 1px solid rgb(199, 192, 192);
 }
 
-a {
+.container-conteudo a {
     text-decoration: none;
     background-color: var(--primary-color);
     color: var(--second-color);
