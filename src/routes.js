@@ -30,6 +30,7 @@ router.post('/login/administrador/gerencial/create/success', admPageCreateContro
 router.get('/login/administrador/gerencial/delete', admPageDeleteController);
 router.post('/login/administrador/gerencial/delete', admPageDeleteController);
 router.get('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController)
+router.post('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController)
 // router.delete gerencial
 router.get('/login/administrador/moradias', admPageMoradiasController);
 router.get('/login/administrador/moradias/vincular', admPageVincularMoradiasController);

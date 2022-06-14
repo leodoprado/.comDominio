@@ -29,4 +29,15 @@ router.get('/login/administrador/gerencial/delete/:idUsuario', (req, res) => {
     })
 })
 
+router.post('/login/administrador/gerencial/delete/:idUsuario', (req, res) => {
+    Usuario.destroy ({
+        where: { idUsuario: idUsuario}
+    }).then(function(){
+        res.redirect('/login/administrador/gerencial/delete')
+    }).catch(function(){
+        res.send('Erro: Usuario nao excluido com sucesso')
+    })
+})
+
+
 module.exports = router;

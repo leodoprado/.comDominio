@@ -19,7 +19,6 @@ router.get('/login/administrador/perfil/:idUsuario', accessValidation ,(req, res
 });
 
 router.post('/login/administrador/perfil/:idUsuario', (req, res) => {
-
     id = req.params.idUsuario;
 
     nome = req.body.nome
