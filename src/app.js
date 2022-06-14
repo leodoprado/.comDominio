@@ -2,6 +2,7 @@ const express = require('express');
 const routes = require('./routes');
 const db = require('@database/db');
 const Usuario = require('@model/usuarioModel');
+const Comunicados = require('@model/comunicadosModel');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');

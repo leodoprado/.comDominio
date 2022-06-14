@@ -1,6 +1,5 @@
 const Sequelize = require ('sequelize');
 const connection = require('@database/db');
-const sequelize = require('sequelize');
 
 const Comunicados = connection.define('comunicados', {
     idComunicados: {
@@ -26,5 +25,8 @@ const Comunicados = connection.define('comunicados', {
         allowNull: false
     }
 })
+
+// Sincronizando model com banco de dados
+//Comunicados.sync({force: false});
 
 module.exports = Comunicados;
