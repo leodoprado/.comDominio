@@ -41,6 +41,7 @@ input {
 label {
     color: var(--primary-color);
     font-size: 17px;
+    margin-top: 30px;
 }
 
 input:focus {
@@ -87,46 +88,13 @@ hr {
     padding: 20px;
 }
 
-.conteudo-idusuario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-#btn-buscar {
-    border: none;
-    font-family: var(--second-font);
-    background: var(--primary-color);
-    color: #fff;
-    font-size: 15px;
-    font-weight: bold;
-    height: 35px;
-    width: 100px;
-    cursor: pointer;
-    opacity: 0.9;
-    padding: 2px;
-    margin-left: 30px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: box-shadow, transform;
-}
-
-#btn-buscar:hover, #btn-buscar:focus, #btn-buscar:active {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
 .conteudo-dados {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 35px;
+    margin-left: 45px;
 }
 
 .conteudo {
@@ -144,7 +112,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 #btn-voltar {
@@ -171,4 +139,55 @@ hr {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+#btn-excluir {
+    border: none;
+    font-family: var(--second-font);
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    width: 160px;
+    cursor: pointer;
+    opacity: 0.9;
+    padding: 2px;
+    margin-left: 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+}
+
+#btn-excluir:hover, #btn-excluir:focus, #btn-excluir:active {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#input-nivelacesso {
+    width: 220px;
+}
+
+#input-nome {
+    width: 320px;
+}
+
+#input-cpf{
+    width: 250px;
+}
+
+#input-datanascimento {
+    width: 130px;
+}
+
+#input-email {
+    width: 395px;
+}
+
+#input-telefone {
+    width: 200px;
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/log/administrador/dadosDeleteAdministrador.css">
+</head>
+<body>
+    <%- include('../../partials/menuAdministrador.ejs') %> 
+    <div class="container">
+        <div class="container-conteudo">
+            <h1>Confirme os dados</h1>
+            <hr>
+            <div class="conteudo">
+                <div class="conteudo-dados">
+                    <label for="">Nivel de Acesso: <input value=<%= dados.nivelAcesso %>  name="nivelAcesso" id="input-nivelacesso" type="text" disabled></label>
+                    <label for="">Nome: <input value=<%= dados.nome %>  name="nome" id="input-nome" type="text" disabled></label>
+                    <label for="">CPF: <input value=<%= dados.cpf %> name="cpf" id="input-cpf" type="text" disabled></label>
+                    <label for="">Data de Nascimento: <input value=<%= dados.datanascimento %> name="datanascimento" id="input-datanascimento" type="text" disabled></label>
+                    <label for="">Email: <input value=<%= dados.email %> name="email" id="input-email" type="text" disabled></label>
+                    <label for="">Telefone: <input value=<%= dados.telefone1 %> name="telefone1" id="input-telefone" type="text" disabled></label>
+                </div>
+                <div class="container-btn">
+                    <a href="/login/administrador/gerencial/delete" id="btn-voltar">Voltar</a>
+                    <a href="" id="btn-excluir">Excluir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
