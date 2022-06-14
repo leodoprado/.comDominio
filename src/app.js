@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
 const db = require('@database/db');
-const UserAuth = require('@model/loginModel');
+const Usuario = require('@model/usuarioModel');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -18,7 +18,7 @@ app.use(session({
 app.use(flash());
 
 // Declarando rotas
-const Routes = require('./routes');
+const Routes = require('./routes'); 
 
 // View engine
 app.set("views", "./src/view");

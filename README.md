@@ -1,14 +1,21 @@
 # .comDomínio - projeto Web
+
 ***Instale as dependências do projeto utilizando o comando: npm install***
 
 **Dependências do projeto:**
   * Express
+  * Express-session
   * Mysql2
   * Sequelize
-  * Dotenv
+  * BcryptJS
+  * EJS
+  * Body-parser
   * Module-alias
+  * Dotenv
+  * Connect-flash
 #
 **Referências de projetos:**
+  * TownSq
   * Condofy
   * Acolweb
   * Condomob

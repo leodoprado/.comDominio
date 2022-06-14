@@ -19,13 +19,18 @@
 	box-sizing: border-box;
 	-webkit-appearance: none;
 	appearance: none;
-	font-family: var(--primary-font), Times, serif;
+	font-family: var(--second-font), Times, serif;
 }
 body, html{
 	overflow-x: hidden;
 }
+
+span {
+	font-weight: bold;
+}
+
 .menu{
-	background-color: var(--primary-color);
+	background-color: #375991;
 	position: fixed;
 	overflow: hidden;
 	height: 100vh;
@@ -76,7 +81,7 @@ body, html{
 }
 .menu li:hover a, nav.menu li.active > a{
 	color: #fff;
-	background-color: var(--third-color);
+	background-color: var(--primary-color);
     border-left: 1px solid var(--second-color);
     transition: 0.4s;
     transition-timing-function: ease-in-out;
@@ -104,7 +109,7 @@ nav{
 
 .btn-sair {
     position: relative;
-    top: 243px;
+    top: 285px;
 }
 
 .menu:hover, nav.menu.expanded{

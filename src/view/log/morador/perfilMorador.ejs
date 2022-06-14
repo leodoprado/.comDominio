@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil - Administrador</title>
+    <title>Perfil - Morador</title>
     <link rel="stylesheet" href="/css/log/administrador/perfil.css">
-    <link rel="icon" type="imagem/png" href="/img/home/principal/icon.ico"/>
 </head>
 <body>
-    <%- include('../../partials/menuAdministrador.ejs') %> 
+    <%- include('../../partials/menu.ejs') %> 
     <form action="/login/administrador/perfil/:id" method="post">
         <div class="container">
             <div class="container-conteudo">
@@ -22,7 +21,7 @@
                             </div>
                         </div>
                         <div class="dados-da-conta">
-                            <label for="" >ID Morador: <input disabled value=<%= result.idUsuario %> class="inputs-ddc" type="text" id="idmorador"></label>
+                            <label for="" >ID Morador: <input disabled value=<%= result.idUser %> class="inputs-ddc" type="text" id="idmorador"></label>
                             <label for="" >Senha: <input disabled class="inputs-ddc" type="password" id="senha" placeholder="***********"></label>
                             <label for="" >Nível de acesso: <input disabled value=<%= result.nivelAcesso %> class="inputs-ddc" id="nivelacesso"></label>
                         </div>
@@ -43,7 +42,7 @@
                             <label for="" id="label-sexo">Sexo: <input value=<%= result.sexo %> name="sexo" id="input-sexo" type="text"></label>
                         </div>
                         <div class="dados-pessoais">
-                            <label for="">País: <input value=<%= result.pais %> name="pais" type="text" id="input-nacionalidade"></label>
+                            <label for="">País: <input value="Informe seu país de origem" name="pais" type="text" id="input-nacionalidade"></label>
                             <label for="" id="label-cidadenatal">Cidade Natal: <input value=<%= result.cidadenatal %> name="cidadenatal" type="text" id="input-cidadenatal"></label>
                             <label for="" id="label-estado">UF: <input value=<%= result.estado %> name="estado" type="text" id="input-estado"></label>
                         </div>
