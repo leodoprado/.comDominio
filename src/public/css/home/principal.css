@@ -197,10 +197,11 @@ h2 {
 
 .principal-texto2 {
     display: flex;
-    padding-top: 35px;
+    padding-top: 25px;
     text-align: center;
     color: var(--primary-color);
 }
+
 
 li {
     list-style-type: none;
@@ -209,6 +210,7 @@ li {
 .principal-texto-esquerda {
     font-family: var(--primary-font);
     font-weight: 400;
+    font-size: 19px;
     width: 40%;
     text-decoration: none;
     margin-left: auto;
@@ -218,13 +220,14 @@ li {
 .principal-texto-direita {
     font-family: var(--primary-font);
     font-weight: 400;
+    font-size: 19px;
     width: 40%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .texto-funcionalidades {
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 /*-----------------------------------*/
@@ -250,15 +253,15 @@ li {
 
 .principal-texto3 {
     display: flex;
-    padding-top: 35px;
+    padding-top: 25px;
     text-align: center;
     color: var(--primary-color);
-    font-size: 18px;
 }
 
 .principal-texto-esquerda2 {
     font-family: var(--primary-font);
     font-weight: 400;
+    font-size: 21px;
     width: 40%;
     text-decoration: none;
     margin-left: auto;
@@ -268,6 +271,7 @@ li {
 .principal-texto-direita2 {
     font-family: var(--primary-font);
     font-weight: 400;
+    font-size: 21px;
     width: 40%;
     margin-left: auto;
     margin-right: auto;
