@@ -7,7 +7,8 @@ const admPagePerfilController = require('./controller/adm/admPagePerfil');
 const admPageGerencialController = require('@controller/adm/admPageGerencial');
 const admPageCreateController = require('@controller/adm/admPageCreate');
 const admPageDeleteController = require('@controller/adm/admPageDelete');
-const admPageMoradiasController = require('@controller/adm/admPageMoradias')
+const admPageFinanceiroController = require('@controller/adm/admPageFinanceiro');
+const admPageMoradiasController = require('@controller/adm/admPageMoradias');
 const admPageVincularMoradiasController = require('@controller/adm/admPageVincularMoradias');
 const admPageComunicadosController = require('@controller/adm/admPageComunicados');
 const admPageAgendaController = require('@controller/adm/admPageAgenda');
@@ -29,8 +30,9 @@ router.get('/login/administrador/gerencial/create', admPageCreateController);
 router.post('/login/administrador/gerencial/create/success', admPageCreateController);
 router.get('/login/administrador/gerencial/delete', admPageDeleteController);
 router.post('/login/administrador/gerencial/delete', admPageDeleteController);
-router.get('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController)
-router.post('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController)
+router.get('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController);
+router.post('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController);
+router.get('/login/administrador/financeiro', admPageFinanceiroController);
 // router.delete gerencial
 router.get('/login/administrador/moradias', admPageMoradiasController);
 router.get('/login/administrador/moradias/vincular', admPageVincularMoradiasController);
