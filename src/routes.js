@@ -22,6 +22,7 @@ router.get('/logout', loginPageController);
 router.get('/create', create);
 router.post('/create/user', create);
 router.get('/central-de-ajuda', homePageController);
+router.get('/assinatura-do-software', homePageController);
 router.get('/login/morador/perfil/:idUsuario', moradorPagePerfilController);
 router.post('/login/morador/perfil/:idUsuario', moradorPagePerfilController)
 router.get('/login/administrador/perfil/:idUsuario', admPagePerfilController);
