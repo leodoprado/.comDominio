@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central de ajuda</title>
-    <link rel="stylesheet" href="../../public/css/home/centraldeajuda.css">
-    <link rel="icon" type="imagem/png" href="../../public/img/home/login/icon.ico"/>
+    <title>Central de Ajuda</title>
+    <link rel="stylesheet" href="/css/home/centraldeajuda.css">
+    <link rel="icon" type="imagem/png" href="/img/home/login/icon.ico"/>
 </head>
 <body>
     <header class="container">
-        <a href="#principal"><img src="../../public/img/home/centraldeajuda/logo-.comDomínio300px.png" alt=""></a>
+        <a href="/"><img src="/img/home/centraldeajuda/logo-.comDomínio300px.png" alt=""></a>
     </header>
     <div class="centraldeajuda-conteudo-tit">
         <div class="centraldeajuda-conteudo-titulo">
@@ -26,30 +26,56 @@
         <div class="conteudos-de-ajuda-esquerda">
             <ul>
                 <li class="texto-centraldeajuda">
-                    <h3>Gerencial</h3>
+                    <button id="btn-perfil"><h3>Perfil</h3></button>
+                    <div id="descricao-perfil" class="hide"><p class="p">- Funcionalidades do Módulo.</p><br>
+                                                <p>• Atualização de dados</p><br>
+                                                <p>• Garantir a integridade pessoal dos dados</p><br>
+                                                <p>• Verificar as possibilidades de acesso ao sistema</p>
+                    </div>
                 </li>
                 <li class="texto-centraldeajuda">
-                    <h3>Financeiro</h3>
+                    <button id="btn-gerencial"><h3>Gerencial</h3></button>
+                    <div id="descricao-gerencial" class="hide"><p class="p">- Funcionalidades do Módulo.</p><br>
+                                                  <p>• Integrar todos os usuários ativos no sistema</p><br>
+                                                  <p>• Manter a organização e comunicação dos moradores</p><br>
+                    </div>
                 </li>
                 <li class="texto-centraldeajuda">
-                    <h3>Moradias</h3>
+                    <button id="btn-moradias"><h3>Moradias</h3></button>
+                    <div id="descricao-moradias" class="hide"><p class="p">- Funcionalidades do Módulo.</p><br>
+                                                <p>• Integrar usuários com suas respectivas moradias</p><br>
+                                                <p>• Gestão dos apartamentos</p><br>
+                                                <p>• Garantir a organização do espaço</p>
+                    </div>
                 </li>
             </ul>
 
         </div>
         <div class="conteudos-de-ajuda-direita">
-            <ul>
-                <li class="texto-centraldeajuda">
-                    <h3>Moradores</h3>
-                </li>
-                <li class="texto-centraldeajuda"> 
-                    <h3>Comunicados</h3>
-                </li>
-                <li class="texto-centraldeajuda"> 
-                    <h3>Agenda</h3>
-                </li>
-            </ul>
+            <li class="texto-centraldeajuda">
+                <button id="btn-financeiro"><h3>Financeiro</h3></button>
+                <div id="descricao-financeiro" class="hide"><p class="p">- Funcionalidades do Módulo.</p><br>
+                                                <p>• Administrar o sistema de gestão do condomínio</p><br>
+                                                <p>• Garantir a organização das finanças</p><br>
+                                                <p>• Garantir a organização do espaço</p>
+                </div>
+            </li>
+            <li class="texto-centraldeajuda">
+                <button id="btn-comunicados"><h3>Comunicados</h3></button>
+                <div id="descricao-comunicados" class="hide"><p class="p">- Funcionalidades do Módulo.</p><br>
+                                                <p>• Garantir a informação aos moradores</p><br>
+                                                <p>• Garantir a organização aos usuários</p>
+                </div>
+            </li>
+            <li class="texto-centraldeajuda">
+                <button id="btn-agenda"><h3>Agenda</h3></button>
+                <div id="descricao-agenda" class="hide"><p class="p">- Funcionalidades do Módulo.</p><br>
+                                            <p>• Garantir a organização dos espaços sociais</p><br>
+                                            <p>• Administrar de formar eficiente os horários</p>
+                </div>
+            </li>
         </div>
     </div>
+    <script src="/js/home/principal/centralajuda.js"></script>
 </body>
 </html>
