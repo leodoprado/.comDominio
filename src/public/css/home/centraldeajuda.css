@@ -21,6 +21,8 @@ body, html {
     width: 100%;
     height: 100%;
     font-size: 100%;
+    background: rgb(80,114,167);
+    background: linear-gradient(90deg, rgba(80,114,167,1) 0%, rgba(97,126,172,1) 40%, rgba(152,180,224,1) 100%);
 }
 
 li, ul, a {
@@ -48,7 +50,6 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--second-color);
 }
 
 .centraldeajuda-conteudo-tit {
@@ -69,7 +70,8 @@ button {
 .centraldeajuda-conteudo-sub {
     width: 100%;
     height: 100px;
-    background: var(--second-color);
+    background: rgb(80,114,167);
+    background: linear-gradient(90deg, rgba(80,114,167,1) 0%, rgba(97,126,172,1) 40%, rgba(152,180,224,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,13 +92,15 @@ button {
 }
 
 .conteudos-de-ajuda-esquerda {
-    font-family: var(--primary-font);
-    font-weight: 400;
+    font-family: var(--second-font);
+    color: var(--second-color);
+    font-weight: bold;
 }
 
 .conteudos-de-ajuda-direita {
-    font-family: var(--primary-font);
-    font-weight: 400;
+    font-family: var(--second-font);
+    color: var(--second-color);
+    font-weight: bold;
     margin-left: 100px;
 }
 
