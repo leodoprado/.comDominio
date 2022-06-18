@@ -42,5 +42,7 @@ router.get('/login/administrador/moradias/vincular', admPageVincularMoradiasCont
 router.get('/login/administrador/comunicados', admPageComunicadosController);
 // rotas de comunicados
 router.get('/login/administrador/agenda', admPageAgendaController);
+router.get('/login/administrador/agenda/agendar', admPageAgendaController);
+router.get('/login/administrador/agenda/pedidos', admPageAgendaController);
 
 module.exports = router;

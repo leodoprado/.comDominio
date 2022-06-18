@@ -79,6 +79,6 @@ const Usuario = connection.define('usuario', {
 })
 
 // Sincronizando model com banco de dados
-Usuario.sync({force: false});
+// Usuario.sync({force: false});
 
 module.exports = Usuario;
