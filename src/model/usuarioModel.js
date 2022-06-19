@@ -8,24 +8,47 @@ const Usuario = connection.define('usuario', {
         primaryKey: true
     },
     senha: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING(20),
+        allowNull: false,
+        len: {
+            args: [5, 20],
+            msg: 'a Senha precisa ter entre 5 a 20 caracteres!'
+        }
     },
     nivelAcesso: {
         type: Sequelize.STRING,
         allowNull: false
     },
     nome: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING(40),
+        allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: 'o campo "Nome" não pode ser vazio!'
+            },
+            max: {
+                msg: 'o campo "Nome" não pode ter mais de 40 caracteres!'
+            }
+        }
     },
     datanascimento: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.DATE,
+        allowNull: false,
+        validate: {
+            isDate: true,
+            notEmpty: {
+                msg: 'O campo "Data Nascimento" não pode ser vazio!'
+            }
+        }
     },
     cpf: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING(14),
+        allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: 'o campo "CPF" não pode ser vazio!'
+            },
+        }
     },
     rg: {
         type: Sequelize.INTEGER,
