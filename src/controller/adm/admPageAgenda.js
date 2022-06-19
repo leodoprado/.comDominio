@@ -37,23 +37,23 @@ router.get('/login/administrador/agenda/pedidos', (req, res) => {
 })
 
 router.post('/login/administrador/agenda/pedidos', (req, res) => {
-    idAgendamento = req.body.idAgendamento
-    Agenda.findOne({where:{idAgendamento: idAgendamento}}).then(id => {
+    id = req.body.id
+    Agenda.findOne({where:{id: id}}).then(idAgendamento => {
         var UsuarioExiste = (id != undefined)
         if(UsuarioExiste){
-            res.redirect(`/login/administrador/gerencial/delete/${id.idAgendamento}`);
+            res.redirect(`/login/administrador/agenda/pedidos/${idAgendamento.id}`);
         } else {
             res.redirect('/');
         }
     })
 })
 
-router.get('/login/administrador/agenda/pedidos/:idAgendamento', (req, res) => {
-    Agenda.findOne({where: {idAgendamento: idAgendamento}}).then(function(dados){
-        if(!dados) {
-            res.redirect(`/login/Administrador/gerencial/delete`)
+router.get('/login/administrador/agenda/pedidos/:id', (req, res) => {
+    Agenda.findOne({where: {id: id}}).then(function(pedido){
+        if(!pedido) {
+            res.redirect(`/login/Administrador/agenda/pedidos`)
         } else {
-            res.render('log/adm/dadosDeleteAdministrador', { dados: dados})
+            res.render('log/adm/pedidosAtualizarAgendaAdministrador', { pedido: pedido })
         }
     })
 })

@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil - Morador</title>
     <link rel="stylesheet" href="/css/log/administrador/perfil.css">
+    <link rel="icon" type="imagem/png" href="/img/home/principal/icon.ico"/>
 </head>
 <body>
-    <%- include('../../partials/menu.ejs') %> 
+    <%- include('../../partials/menuAdministrador.ejs') %> 
     <form action="/login/administrador/perfil/:id" method="post">
         <div class="container">
             <div class="container-conteudo">
@@ -21,7 +22,7 @@
                             </div>
                         </div>
                         <div class="dados-da-conta">
-                            <label for="" >ID Morador: <input disabled value=<%= result.idUser %> class="inputs-ddc" type="text" id="idmorador"></label>
+                            <label for="" >ID Morador: <input disabled value=<%= result.idUsuario %> class="inputs-ddc" type="text" id="idmorador"></label>
                             <label for="" >Senha: <input disabled class="inputs-ddc" type="password" id="senha" placeholder="***********"></label>
                             <label for="" >Nível de acesso: <input disabled value=<%= result.nivelAcesso %> class="inputs-ddc" id="nivelacesso"></label>
                         </div>

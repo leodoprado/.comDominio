@@ -1,24 +1,25 @@
 const express = require("express")
 const router = express.Router()
 const accessValidation = require("@middleware/accessValidation");
-const PerfilUser = require("@model/usuarioModel");
+const Usuario = require("@model/usuarioModel");
 
-router.get('/login/morador/perfil/:id', accessValidation ,(req, res) => {
+router.get('/login/morador/perfil/:idUsuario', accessValidation ,(req, res) => {
     const session = req.session.user
 
-    id = req.params.id;
-    res.cookie('id', id, {expire: new Date()+10*60*1000})
+    idUsuario = req.params.idUsuario;
+    res.cookie('idUsuario', idUsuario, {expire: new Date()+10*60*1000})
 
-    PerfilUser.findOne({where: {id: id, idUser: session.idUser,  nivelAcesso: session.nivelAcesso}}).then(function(result){
+    Usuario.findOne({where: {idUsuario: idUsuario,  nivelAcesso: session.nivelAcesso}}).then(function(result){
         if(!result) {
-            res.redirect(`/login`)
+            res.redirect(`/login/morador/gerencial`)
         } else {
             res.render('log/morador/perfilMorador', { result: result})
         }
     })
 });
 
-router.post('/login/morador/perfil/:id', (req, res) => {
+router.post('/login/morador/perfil/:idUsuario', (req, res) => {
+    id = req.params.idUsuario;
 
     nome = req.body.nome
     datanascimento = req.body.datanascimento
@@ -37,7 +38,7 @@ router.post('/login/morador/perfil/:id', (req, res) => {
     console.log(nome)
 
     if(req.body !== ''){
-        PerfilUser.update({
+        Usuario.update({
             nome: nome,
             datanascimento: datanascimento,
             cpf: cpf,
@@ -53,11 +54,11 @@ router.post('/login/morador/perfil/:id', (req, res) => {
             telefone2 : telefone2
         },
         {
-            where: {id : id}
+            where: {idUsuario : idUsuario}
         });
         console.log(nome)
-        res.clearCookie('id');
-        res.redirect('/login/morador/perfil/:id');
+        res.clearCookie('idUsuario');
+        res.redirect('/login/morador/perfil/gerencial');
     } else {
         res.render('log/morador/perfilMorador', { result : req.body})
     }

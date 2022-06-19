@@ -14,7 +14,15 @@ const Agenda = connection.define('agendamento', {
         type: Sequelize.STRING,
         allowNull: false
     },
+    horarioInicio: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     dataFim: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    horarioFim: {
         type: Sequelize.STRING,
         allowNull: false
     },
