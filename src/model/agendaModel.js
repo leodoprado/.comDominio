@@ -2,12 +2,6 @@ const Sequelize = require ('sequelize');
 const connection = require('@database/db');
 
 const Agenda = connection.define('agendamento', {
-    idAgendamento: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
-    },
     titulo: {
         type: Sequelize.STRING,
         allowNull: false
@@ -32,6 +26,6 @@ const Agenda = connection.define('agendamento', {
 })
 
 // Sincronizando o model com o banco de dados
-// Agenda.sync({force: false});
+Agenda.sync({force: false});
 
 module.exports = Agenda;

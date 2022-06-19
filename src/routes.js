@@ -43,6 +43,10 @@ router.get('/login/administrador/comunicados', admPageComunicadosController);
 // rotas de comunicados
 router.get('/login/administrador/agenda', admPageAgendaController);
 router.get('/login/administrador/agenda/agendar', admPageAgendaController);
+router.post('/login/administrador/agenda/agendar/sucess' ,admPageAgendaController);
 router.get('/login/administrador/agenda/pedidos', admPageAgendaController);
+router.post('/login/administrador/agenda/pedidos', admPageAgendaController);
+router.get('/login/administrador/agenda/pedidos/:idAgendamento', admPageAgendaController);
+router.post('/login/administrador/agenda/pedidos/idAgendamento', admPageAgendaController);
 
 module.exports = router;

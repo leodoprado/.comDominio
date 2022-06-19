@@ -9,32 +9,34 @@
     <link rel="icon" type="imagem/png" href="/img/home/principal/icon.ico"/>
 </head>
 <body>
-    <%- include('../../partials/menuAdministrador.ejs') %> 
-    <div class="container">
-        <div class="container-conteudo">
-            <h1>Agendar Horário</h1>
-            <hr>
-            <div class="conteudo">
-                <div class="conteudo-dados">
-                    <label for="" id="label-idusuario">ID Usuário:<input id="input-idusuario" class="inputs-ddc" type="text"></label>
-                    <label for="" id="label-nome">Nome:<input id="input-nome" class="inputs-ddc" type="text"></label>
-                    <label for="" id="label-titulo">Título:<input id="input-titulo" class="inputs-ddc" type="text"></label>
-                    <label for="" id="label-assunto">Assunto:<textarea name="" class="inputs-ddc" id="input-assunto" cols="30" rows="10"></textarea></label>
-                    <div id="datainicio">
-                        <label for="">Data Inicio:<input id="input-data" class="inputs-ddc" type="text"></label>
-                        <label for="" id="label-horarioinicio">Horário Inicio:<input id="input-horario" class="inputs-ddc" type="text"></label>
+    <%- include('../../partials/menuAdministrador.ejs') %>
+    <form action="/login/administrador/agenda/agendar/sucess" method="post">
+        <div class="container">
+            <div class="container-conteudo">
+                <h1>Agendar Horário</h1>
+                <hr>
+                <div class="conteudo">
+                    <div class="conteudo-dados">
+                        <label for="" id="label-idusuario">ID Usuário:<input  id="input-idusuario" class="inputs-ddc" type="text"></label>
+                        <label for="" id="label-nome">Nome:<input id="input-nome" class="inputs-ddc" type="text"></label>
+                        <label for="" id="label-titulo">Título:<input name="titulo" id="input-titulo" class="inputs-ddc" type="text"></label>
+                        <label for="" id="label-assunto">Assunto:<textarea name="assunto" name="" class="inputs-ddc" id="input-assunto" cols="30" rows="10"></textarea></label>
+                        <div id="datainicio">
+                            <label for="">Data Inicio:<input name="dataInicio" id="input-data" class="inputs-ddc" type="text"></label>
+                            <label for="" id="label-horarioinicio">Horário Inicio:<input name="horarioInicio" id="input-horario" class="inputs-ddc" type="text"></label>
+                        </div>
+                        <div id="datafim">
+                            <label for="">Data Fim:<input name="dataFim" id="input-data" class="inputs-ddc" type="text"></label>
+                            <label for="" id="label-horariofim">Horário Fim:<input name="horarioFim" id="input-horario" class="inputs-ddc" type="text"></label>
+                        </div>
                     </div>
-                    <div id="datafim">
-                        <label for="">Data Fim:<input id="input-data" class="inputs-ddc" type="text"></label>
-                        <label for="" id="label-horariofim">Horário Fim:<input id="input-horario" class="inputs-ddc" type="text"></label>
+                    <div class="container-button">
+                        <a id="btn-voltar" href="/login/administrador/agenda">Voltar</a>
+                        <button id="btn-agendar" type="submit">Agendar</button>
                     </div>
-                </div>
-                <div class="container-button">
-                    <a id="btn-voltar" href="/login/administrador/agenda/pedidos">Voltar</a>
-                    <a id="btn-agendar" href="/login/administrador/agenda/agendar">Agendar</a>
                 </div>
             </div>
         </div>
-    </div>
+    </form> 
 </body>
 </html>
