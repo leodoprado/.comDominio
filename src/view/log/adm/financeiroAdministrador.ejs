@@ -10,14 +10,75 @@
 </head>
 <body>
     <%- include('../../partials/menuAdministrador.ejs') %> 
-    <div class="container">
-        <div class="container-conteudo">
-            <h1>Financeiro</h1>
-            <hr>
-            <div class="conteudo">
+    <form action="">
+        <div class="container">
+            <div class="container-conteudo">
+                <h1>Financeiro</h1><hr>
+                <div class="conteudo">
+                    <label for="ltMeses"> Mês:
+                        <select name="ltMeses" id="ltMeses">
+                            <option value="1">Janeiro</option>
+                            <option value="2">Fevereiro</option>
+                            <option value="3">Março</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Maio</option>
+                            <option value="6">Junho</option>
+                            <option value="7">Julho</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Setembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                    </label>
 
+                    <div class="container-tabela">
+                        <table>
+                            <tr>
+                                <th>Mês</th>
+                                <th>ID Morador</th>
+                                <th>Nome</th>
+                                <th>Número do Contrato</th>
+                                <th>Tempo de Contrato</th>
+                                <th>Status</th>
+                                <th>Valor</th>
+                            </tr>
+                                <tr>
+                                    <td>Janeiro</td>
+                                    <td>123</td>
+                                    <td>Leonardo do Prado</td>
+                                    <td>12349995</td>
+                                    <td>6 meses</td>
+                                    <td>Pago</td>
+                                    <td>R$600,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Janeiro</td>
+                                    <td>12345</td>
+                                    <td>Paulo Augusto Lazzarotto</td>
+                                    <td>33312962</td>
+                                    <td>12 meses</td>
+                                    <td>A pagar</td>
+                                    <td>R$600,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Janeiro</td>
+                                    <td>1234</td>
+                                    <td>Eduardo Pöttker da Silva</td>
+                                    <td>40122318</td>
+                                    <td>6 Meses</td>
+                                    <td>Pago</td>
+                                    <td>R$600,00</td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="container-button">
+                    <a id="btn-excluir" href="/login/administrador/financeiro/delete">Excluir</a>
+                    <a id="btn-cadastrar" href="/login/administrador/financeiro/registro">Cadastrar</a>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </body>
 </html>

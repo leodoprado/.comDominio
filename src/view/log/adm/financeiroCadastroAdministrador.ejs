@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/log/administrador/financeiroCadastroAdministrador.css"> 
+    <link rel="icon" type="imagem/png" href="/img/home/principal/icon.ico"/>
+    <title>Cadastro do Financeiro - Administrador</title>
+</head>
+<body>
+    <%- include('../../partials/menuAdministrador.ejs') %>
+    <form action="">
+        <div class="container">
+            <div class="container-conteudo">
+                <h1>Cadastro Financeiro</h1><hr>
+                <div class="conteudo">
+                    <label for="" class="subConteudo" id="idusuario">Id Usuário:<input type="text"></label>
+                    <div class="subConteudo" id="espacamento-topo">
+                        <label for="ltMeses"> Mês:
+                            <select name="ltMeses" id="ltMeses">
+                                <option value="1">Janeiro</option>
+                                <option value="2">Fevereiro</option>
+                                <option value="3">Março</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Maio</option>
+                                <option value="6">Junho</option>
+                                <option value="7">Julho</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Setembro</option>
+                                <option value="10">Outubro</option>
+                                <option value="11">Setembro</option>
+                                <option value="12">Dezembro</option>
+                            </select>
+                        </label>
+    
+                        <label for="txAno">Ano: <input type="number" name="txAno" id="txAno" maxlength="4" 
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        </label>
+                    </div>
+
+                    <div class="subConteudo">
+                        <label for="txNumContrato">Número do Contrato: <input type="number" name="txNumContrato" id="txNumContrato" maxlength="8" 
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        </label>
+
+                        <label for="ltTmpContrato">Tempo de Contrato: 
+                            <select name="ltTmpContrato" id="ltTmpContrato" >
+                                <option value="1">3 meses</option>
+                                <option value="2">6 meses</option>
+                                <option value="3">12 meses</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="subConteudo">
+                        <label for="ltTipoPagamento">Tipo de Pagamento: 
+                            <select name="ltTipoPagamento" id="ltTipoPagamento" >
+                                <option value="1">Boleto</option>
+                                <option value="2">Dinheiro</option>
+                                <option value="3">PIX</option>
+                            </select>
+                        </label>
+
+                        <label for="ltStatus">Status do Pagamento: 
+                            <select name="ltStatus" id="ltStatus" >
+                                <option value="1">A Pagar</option>
+                                <option value="2">Pago</option>
+                                <option value="3">Cancelado</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="subConteudo">
+                        <label for="txValorPadrao">Valor Padrão Mensal: 
+                            <input type="number" id="txValorPadrao" name="txValorPadrao" step="0.01" >
+                        </label>
+                    </div>
+
+                    <div class="container-btn">
+                        <a href="/login/administrador/gerencial/delete" id="btn-voltar">Voltar</a>
+                        <button type="submit" id="btn-cadastrar">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - Morador</title>
+    <link rel="stylesheet" href="/css/log/administrador/agendaAdministrador.css">
+    <link rel="icon" type="imagem/png" href="/img/home/principal/icon.ico"/>
+</head>
+<body>
+    <%- include('../../partials/menuMorador.ejs') %> 
+    <div class="container">
+        <div class="container-conteudo">
+            <h1>Agenda do Condomínio</h1>
+            <hr>
+            <div class="conteudo">
+                <div class="container-tabela">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data do Requerimento</th>
+                            <th>Titulo</th>
+                            <th>Assunto</th>
+                            <th>Data Inicio</th>
+                            <th>Data Fim</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <td>15/02/2022</td>
+                            <td>Agendar o salão de festas!</td>
+                            <td>Gostaria de agendar o salão de festas fim de semana, para comemorar o aniversário da minha filha.</td>
+                            <td>18/06/2022</td>
+                            <td>18/06/2022</td>
+                            <td>Aceito</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>19/02/2022</td>
+                            <td>Agendar o salão de festas do prédio</td>
+                            <td>Convidar alguns amigos para comemorar o meu aniversário.</td>
+                            <td>25/06/2022</td>
+                            <td>26/06/2022</td>
+                            <td>Processando</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="container-button">
+                    <a id="btn-cadastrar" href="/login/morador/agenda/agendar">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
