@@ -96,7 +96,6 @@ hr {
 }
 
 .conteudo {
-    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,7 +116,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 65px;
+    margin-top: 55px;
 }
 
 #btn-voltar {

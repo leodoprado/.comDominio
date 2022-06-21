@@ -5,30 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vincular Moradia - Administrador</title>
-    <link rel="stylesheet" href="/css/log/administrador/vincularMoradiasAdministrador.css">
+    <link rel="stylesheet" href="/css/log/administrador/deleteAdministrador.css">
     <link rel="icon" type="imagem/png" href="/img/home/principal/icon.ico"/>
 </head>
 <body>
     <%- include('../../partials/menuAdministrador.ejs') %> 
-    <div class="container">
-        <div class="container-conteudo">
-            <h1>Vincular Apartamento</h1>
-            <hr>
-            <div class="conteudo">
-                <div class="conteudo-dados">
-                    <label for="">ID Morador: <input id="input-idmorador" class="input-dados" type="text"></label>
-                    <label for="">Nome: <input id="input-nome" class="input-dados" type="text"></label>
-                    <label for="">Número Apartamento: <input id="input-numeroapto" class="input-dados" type="text"></label>
-                    <label for="">Andar: <input id="input-andar" class="input-dados" type="text"></label>
-                    <label for="">Posição: <input id="input-posicao" class="input-dados" type="text"></label>
-                    <label for="">Vagas de Garagem: <input id="input-garagem" class="input-dados" type="text"></label>
+    <form action="/login/administrador/moradias/vincular" method="post">
+        <div class="container">
+            <div class="container-conteudo">
+                <h1>Registrar Moradia</h1>
+                <hr>
+                <div class="conteudo">
+                    <div class="conteudo-idusuario">
+                        <label for="">ID Usuário: <input name="idUsuario" type="text"></label>
+                        <button type="submit" id="btn-buscar">Registrar</button>
+                    </div>
+                    <div class="container-btn">
+                        <a href="/login/administrador/gerencial" id="btn-voltar">Voltar</a>
+                    </div>
                 </div>
             </div>
-            <div class="container-btn">
-                <a href="http://localhost:4000/login/administrador/moradias" id="btn-voltar">Voltar</a>
-                <button id="btn-vincular" type="submit">Vincular</button>
-            </div>
         </div>
-    </div>
+    </form>
 </body>
 </html>

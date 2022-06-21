@@ -1,9 +1,56 @@
 const express = require("express")
 const router = express.Router()
-const PerfilUser = require("@model/usuarioModel");
+const Usuario = require("@model/usuarioModel");
+const Moradia = require('@model/moradiaModel')
 
 router.get('/login/administrador/moradias/vincular', (req, res) => {
     res.render("log/adm/vincularMoradiasAdministrador")
+})
+
+router.post('/login/administrador/moradias/vincular', (req, res) => {
+    idUsuario = req.body.idUsuario
+    Usuario.findOne({where:{idUsuario: idUsuario}}).then(id => {
+        var UsuarioExiste = (id != undefined)
+        if(UsuarioExiste){
+            res.redirect(`/login/administrador/moradias/vincular/${id.idUsuario}`);
+        } else {
+            res.redirect('/');
+        }
+    })
+})
+
+router.get('/login/administrador/moradias/vincular/:idUsuario', (req, res) => {
+    Usuario.findOne({where: {idUsuario: idUsuario}}).then(function(dados){
+        if(!dados) {
+            res.redirect(`/`)
+        } else {
+            res.render('log/adm/vincularMoradorMoradiaAdministrador', { dados: dados})
+        }
+    })
+})
+
+router.post('/login/administrador/moradias/vincular/success', (req, res) => {
+    var idMorador = req.body.idMorador;
+    var nome = req.body.nome;
+    var numApto = req.body.numApto;
+    var andar = req.body.andar;
+    var posicao = req.body.posicao;
+    var garagem = req.body.garagem;
+    var telefone = req.body.telefone
+
+    Moradia.create({
+        idMorador: idMorador,
+        nome: nome,
+        numApto: numApto,
+        andar: andar,
+        posicao: posicao,
+        garagem: garagem,
+        telefone: telefone
+    }).then(() => {
+        res.redirect("/login/administrador/moradias")
+    }).catch((err) => {
+        res.redirect("/login/administrador/moradias/vincular")
+    });
 })
 
 module.exports = router;

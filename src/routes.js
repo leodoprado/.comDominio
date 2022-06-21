@@ -48,6 +48,11 @@ router.get('/login/administrador/financeiro/delete', admPageFinanceiroController
 // router.delete gerencial
 router.get('/login/administrador/moradias', admPageMoradiasController);
 router.get('/login/administrador/moradias/vincular', admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/vincular', admPageVincularMoradiasController);
+router.get('/login/administrador/moradias/vincular/:idUsuario', admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/vincular/:idUsuario', admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/vincular/success', admPageVincularMoradiasController);
+
 // rotas de moradias
 router.get('/login/administrador/comunicados', admPageComunicadosController);
 router.get('/login/administrador/comunicados/cadastro', admPageComunicadosController);
