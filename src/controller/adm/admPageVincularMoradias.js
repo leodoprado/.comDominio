@@ -53,4 +53,8 @@ router.post('/login/administrador/moradias/vincular/success', (req, res) => {
     });
 })
 
+router.get('/login/administrador/moradias/alterar', (req, res) => {
+    res.render("log/adm/moradiaAlterarAdministrador")
+})
+
 module.exports = router;

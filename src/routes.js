@@ -52,7 +52,7 @@ router.post('/login/administrador/moradias/vincular', admPageVincularMoradiasCon
 router.get('/login/administrador/moradias/vincular/:idUsuario', admPageVincularMoradiasController);
 router.post('/login/administrador/moradias/vincular/:idUsuario', admPageVincularMoradiasController);
 router.post('/login/administrador/moradias/vincular/success', admPageVincularMoradiasController);
-
+router.get('/login/administrador/moradias/alterar', admPageVincularMoradiasController);
 // rotas de moradias
 router.get('/login/administrador/comunicados', admPageComunicadosController);
 router.get('/login/administrador/comunicados/cadastro', admPageComunicadosController);
