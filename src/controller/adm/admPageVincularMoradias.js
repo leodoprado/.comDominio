@@ -57,4 +57,52 @@ router.get('/login/administrador/moradias/alterar', (req, res) => {
     res.render("log/adm/moradiaAlterarAdministrador")
 })
 
+router.post('/login/administrador/moradias/alterar', (req, res) => {
+    numApto = req.body.numApto
+    Moradia.findOne({where:{numApto: numApto}}).then(id => {
+        var UsuarioExiste = (id != undefined)
+        if(UsuarioExiste){
+            res.redirect(`/login/administrador/moradias/alterar/${id.numApto}`);
+        } else {
+            res.redirect('/');
+        }
+    })
+})
+
+router.get('/login/administrador/moradias/alterar/:numApto', (req, res) => {
+    Moradia.findOne({where: {numApto: numApto}}).then(function(dadosApto){
+        if(!dadosApto) {
+            res.redirect(`/login/Administrador/moradias/alterar`)
+        } else {
+            res.render('log/adm/moradiaAlterarDadosAdministrador', { dadosApto: dadosApto})
+        }
+    })
+})
+
+router.get('/login/administrador/moradias/apagar', (req, res) => {
+    res.render("log/adm/moradiaApagarDadosAdministrador")
+})
+
+router.post('/login/administrador/moradias/apagar', (req, res) => {
+    numApto = req.body.numApto
+    Moradia.findOne({where:{numApto: numApto}}).then(id => {
+        var UsuarioExiste = (id != undefined)
+        if(UsuarioExiste){
+            res.redirect(`/login/administrador/moradias/apagar/${id.numApto}`);
+        } else {
+            res.redirect('/');
+        }
+    })
+})
+
+router.get('/login/administrador/moradias/apagar/:numApto', (req, res) => {
+    Moradia.findOne({where: {numApto: numApto}}).then(function(dadosApto){
+        if(!dadosApto) {
+            res.redirect(`/`)
+        } else {
+            res.render('log/adm/moradiaApagarDadosMoradiaAdministrador', { dadosApto: dadosApto})
+        }
+    })
+})
+
 module.exports = router;
