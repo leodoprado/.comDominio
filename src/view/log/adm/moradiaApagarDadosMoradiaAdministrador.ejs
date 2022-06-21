@@ -10,7 +10,7 @@
 </head>
 <body>
     <%- include('../../partials/menuAdministrador.ejs') %> 
-    <form action="/login/administrador/moradias/vincular/success" method="post">
+    <form action="/login/administrador/moradias/apagar/success/:numApto" method="post">
         <div class="container">
             <div class="container-conteudo">
                 <h1>Apagar Moradia</h1>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="container-btn">
-                    <a href="http://localhost:4000/login/administrador/moradias" id="btn-voltar">Voltar</a>
+                    <a href="http://localhost:4000/login/administrador/moradias/apagar" id="btn-voltar">Voltar</a>
                     <button id="btn-vincular" type="submit">Apagar</button>
                 </div>
             </div>

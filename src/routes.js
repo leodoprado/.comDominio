@@ -55,9 +55,11 @@ router.post('/login/administrador/moradias/vincular/success', admPageVincularMor
 router.get('/login/administrador/moradias/alterar', admPageVincularMoradiasController);
 router.post('/login/administrador/moradias/alterar', admPageVincularMoradiasController);
 router.get('/login/administrador/moradias/alterar/:numApto', admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/alterar/:numApto', admPageVincularMoradiasController);
 router.get('/login/administrador/moradias/apagar', admPageVincularMoradiasController);
 router.post('/login/administrador/moradias/apagar', admPageVincularMoradiasController);
 router.get('/login/administrador/moradias/apagar/:numApto', admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/apagar/success/:numApto', admPageVincularMoradiasController);
 // rotas de moradias
 router.get('/login/administrador/comunicados', admPageComunicadosController);
 router.get('/login/administrador/comunicados/cadastro', admPageComunicadosController);

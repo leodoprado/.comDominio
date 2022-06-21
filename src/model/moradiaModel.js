@@ -33,7 +33,7 @@ const Moradia = connection.define('moradia', {
 Moradia.belongsTo(Usuario, {
     constraint: true,
     foreignKey: 'idMorador',
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     onDelete: 'CASCADE'
 })
 

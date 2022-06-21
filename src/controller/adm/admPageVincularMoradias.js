@@ -48,9 +48,7 @@ router.post('/login/administrador/moradias/vincular/success', (req, res) => {
         telefone: telefone
     }).then(() => {
         res.redirect("/login/administrador/moradias")
-    }).catch((err) => {
-        res.redirect("/login/administrador/moradias/vincular")
-    });
+    })
 })
 
 router.get('/login/administrador/moradias/alterar', (req, res) => {
@@ -79,6 +77,27 @@ router.get('/login/administrador/moradias/alterar/:numApto', (req, res) => {
     })
 })
 
+router.post('/login/administrador/moradias/alterar/:numApto', (req, res) => {
+    var numApto = req.body.numApto;
+    var andar = req.body.andar;
+    var posicao = req.body.posicao;
+    var garagem = req.body.garagem;
+    if(req.body !== ''){
+        Moradia.update({
+            numApto: numApto,
+            andar: andar,
+            posicao: posicao,
+            garagem: garagem
+        },
+        {
+            where: {numApto : numApto}
+        });
+        res.redirect('/login/administrador/moradias');
+    } else {
+        res.render('log/adm/perfilAdministrador', { result : req.body})
+    }
+})
+
 router.get('/login/administrador/moradias/apagar', (req, res) => {
     res.render("log/adm/moradiaApagarDadosAdministrador")
 })
@@ -102,6 +121,16 @@ router.get('/login/administrador/moradias/apagar/:numApto', (req, res) => {
         } else {
             res.render('log/adm/moradiaApagarDadosMoradiaAdministrador', { dadosApto: dadosApto})
         }
+    })
+})
+
+router.post('/login/administrador/moradias/apagar/success/:numApto', (req, res) => {
+    Moradia.destroy ({
+        where: { numApto: numApto}
+    }).then(function(){
+        res.redirect('/login/administrador/moradias')
+    }).catch(function(){
+        res.send('Erro: Usuario nao excluido com sucesso')
     })
 })
 
