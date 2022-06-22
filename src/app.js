@@ -4,6 +4,7 @@ const db = require('@database/db');
 const Usuario = require('@model/usuarioModel');
 const Moradia = require('@model/moradiaModel');
 const Agena = require('@model/agendaModel');
+const Comunicados = require('@model/comunicadosModel');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');

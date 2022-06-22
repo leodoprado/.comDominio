@@ -63,6 +63,11 @@ router.post('/login/administrador/moradias/apagar/success/:numApto', admPageVinc
 // rotas de moradias
 router.get('/login/administrador/comunicados', admPageComunicadosController);
 router.get('/login/administrador/comunicados/cadastro', admPageComunicadosController);
+router.post('/login/administrador/comunicados/cadastro', admPageComunicadosController);
+router.get('/login/administrador/comunicados/delete', admPageComunicadosController);
+router.post('/login/administrador/comunicados/delete', admPageComunicadosController);
+router.get('/login/administrador/comunicados/delete/:idComunicado', admPageComunicadosController);
+router.post('/login/administrador/comunicados/delete/:idComunicado', admPageComunicadosController);
 router.get('/login/administrador/agenda', admPageAgendaController);
 router.get('/login/administrador/agenda/agendar', admPageAgendaController);
 router.post('/login/administrador/agenda/agendar/sucess' ,admPageAgendaController);

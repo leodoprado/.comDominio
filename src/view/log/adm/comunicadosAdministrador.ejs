@@ -18,16 +18,22 @@
                 <div class="container-tabela">
                     <table>
                         <tr>
+                            <th>ID</th>
                             <th>Titulo</th>
                             <th>Assunto</th>
                             <th>Conteudo</th>
                             <th>Data de Envio</th>
                         </tr>
                         <tr>
-                            <td>Reunião mensal do condomíno</td>
-                            <td>Colocar os empecilhos mensais em pauta e debate-los</td>
-                            <td>A reunião vai começar as 13:15 do dia 16/06/2022</td>
-                            <td>15:45 - 15/06/2022</td>
+                            <% comunicado.forEach(all => { %>
+                                <tr>
+                                    <td><%= all.idComunicado %></td>
+                                    <td><%= all.titulo %></td>
+                                    <td><%= all.assunto %></td>
+                                    <td><%= all.texto %></td>
+                                    <td><%= all.dataenvio %></td>
+                                </tr>
+                                <% }) %>
                         </tr>
                     </table>
                 </div>

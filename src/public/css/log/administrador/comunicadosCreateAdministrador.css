@@ -24,6 +24,10 @@
 	font-family: var(--second-font), Times, serif;
 }
 
+textarea {
+    resize: none;
+}
+
 textarea:focus, input:focus, select:focus {
     border: 0 none;
     outline: 0;
@@ -102,26 +106,27 @@ hr {
 }
 
 #textTitulo {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-left: 20px;
     width: 300px;
 }
 
 #labeltitulo {
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 #dataEnvio {
     margin-left: 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin-right: 55px;
+    margin-bottom: 20px;
+    width: 120px;
 }
 
 #textAssunto {
     margin-left: 21px;
     margin-right: 30px;
-    margin-bottom: 10px;
-    width: 592px;
+    margin-bottom: 20px;
+    width: 535px;
 }
 
 #labelTexto {
@@ -130,7 +135,9 @@ hr {
 
 #textAreaTexto {
     box-shadow: 0 0 1px var(--third-color);
-    margin-right: 42px; 
+    font-size: 20px;
+    width: 592px;
+    height: 285px;
 }
 
 #textAreaTexto:focus, input:focus, select:focus {
