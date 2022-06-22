@@ -27,6 +27,6 @@ const Comunicados = connection.define('comunicados', {
 })
 
 // Sincronizando o model com o banco de dados
-Comunicados.sync({force: false});
+// Comunicados.sync({force: false});
 
 module.exports = Comunicados;

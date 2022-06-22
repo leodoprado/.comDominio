@@ -37,6 +37,7 @@ Moradia.belongsTo(Usuario, {
     onDelete: 'CASCADE'
 })
 
-Moradia.sync({force: false});
+// Sincronizando o model com o banco de dados
+// Moradia.sync({force: false});
 
 module.exports = Moradia;

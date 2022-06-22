@@ -42,6 +42,10 @@ router.get('/login/administrador/gerencial/delete', admPageDeleteController);
 router.post('/login/administrador/gerencial/delete', admPageDeleteController);
 router.get('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController);
 router.post('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController);
+router.get('/login/administrador/gerencial/update', admPageGerencialController);
+router.post('/login/administrador/gerencial/update', admPageGerencialController);
+router.get('/login/administrador/gerencial/update/:idUsuario', admPageGerencialController);
+router.post('/login/administrador/gerencial/update/:idUsuario', admPageGerencialController);
 router.get('/login/administrador/financeiro', admPageFinanceiroController);
 router.get('/login/administrador/financeiro/registro', admPageFinanceiroController);
 router.get('/login/administrador/financeiro/delete', admPageFinanceiroController)

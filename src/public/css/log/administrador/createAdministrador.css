@@ -171,6 +171,11 @@ hr {
 #input-nome {
     width: 300px;
     height: 25px;
+    resize: none;
+    font-size: 18px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 20px;
+    text-align: center;
 }
 
 #input-datanasc {

@@ -156,7 +156,13 @@ hr {
 }
 
 #input-nome {
+    resize: none;
+    height: 25px;
     width: 280px;
+    font-size: 18px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 20px;
+    text-align: center;
 }
 
 #label-datanasc {
