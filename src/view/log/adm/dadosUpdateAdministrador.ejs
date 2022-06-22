@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados do Morador - Administrador</title>
-    <link rel="stylesheet" href="/css/log/administrador/createAdministrador.css">
+    <link rel="stylesheet" href="/css/log/administrador/updateDadosAdministrador.css">
     <link rel="icon" type="imagem/png" href="/img/home/principal/icon.ico"/>
 </head>
 <body>
@@ -24,14 +24,9 @@
                         <label for="">Telefone: <input value=<%= dados.telefone1 %>  name="telefone1" class="inputs-ddc" class="input-telefone" id="input-telefone" type="text"></label>
                     </div>
                     <div class="conteudo-dados-da-conta">
-                        <div class="radio">
+                        <div class="dados-conta">
                             <label for="">Nível de acesso da conta:</label>
-                            <div class="custom-radio">
-                                <input value="Morador" class="radio" name="nivelAcesso" id="radio1" type="radio" checked disabled>
-                                <label class="radio-1" for="radio1">Morador</label>
-                                <input value="Administrador" class="radio" name="nivelAcesso" id="radio2" type="radio" disabled>
-                                <label for="radio2">Administrador</label>
-                            </div>
+                            <input type="text" id="input-nivelacesso" class="inputs-ddc" disabled>
                         </div>
                         <label for="">ID Morador: <input value=<%= dados.idUsuario %>  name="idUsuario" class="inputs-ddc" id="input-id-width" type="text" disabled></label> <br>
                         <label for="">Senha: <input placeholder="**********"  name="senha" class="inputs-ddc" id="input-senha-width" type="password" disabled></label>
