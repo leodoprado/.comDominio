@@ -102,4 +102,40 @@ router.post('/login/administrador/agenda/pedidos/:idAgendamento', (req, res) => 
     }
 })
 
+router.get('/login/administrador/agenda/excluir', (req, res) => {
+    res.render('log/adm/agendaExcluirAdministrador')
+})
+
+router.post('/login/administrador/agenda/excluir', (req, res) => {
+    idAgendamento = req.body.idAgendamento
+    Agenda.findOne({where:{idAgendamento: idAgendamento}}).then(id => {
+        var UsuarioExiste = (id != undefined)
+        if(UsuarioExiste){
+            res.redirect(`/login/administrador/agenda/excluir/${id.idAgendamento}`);
+        } else {
+            res.redirect('/');
+        }
+    })
+})
+
+router.get('/login/administrador/agenda/excluir/:idAgendamento', (req, res) => {
+    Agenda.findOne({where: {idAgendamento: idAgendamento}}).then(function(agendamento){
+        if(!agendamento) {
+            res.redirect(`/login/Administrador/agenda/excluir`)
+        } else {
+            res.render('log/adm/agendaExcluirDadosAdministrador', { agendamento: agendamento })
+        }
+    })
+})
+
+router.post('/login/administrador/agenda/excluir/:idAgendamento', (req, res) => {
+    Agenda.destroy ({
+        where: { idAgendamento: idAgendamento}
+    }).then(function(){
+        res.redirect('/login/administrador/agenda')
+    }).catch(function(){
+        res.send('Erro: Usuario nao excluido com sucesso')
+    })
+})
+
 module.exports = router;

@@ -84,5 +84,9 @@ router.get('/login/administrador/agenda/pedidos', admPageAgendaController);
 router.post('/login/administrador/agenda/pedidos', admPageAgendaController);
 router.get('/login/administrador/agenda/pedidos/:idAgendamento', admPageAgendaController);
 router.post('/login/administrador/agenda/pedidos/:idAgendamento', admPageAgendaController);
+router.get('/login/administrador/agenda/excluir', admPageAgendaController);
+router.post('/login/administrador/agenda/excluir', admPageAgendaController);
+router.get('/login/administrador/agenda/excluir/:idAgendamento', admPageAgendaController);
+router.post('/login/administrador/agenda/excluir/:idAgendamento', admPageAgendaController);
 
 module.exports = router;

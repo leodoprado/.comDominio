@@ -122,7 +122,12 @@ hr {
 
 #input-titulo {
     width: 400px;
-
+    resize: none;
+    height: 25px;
+    font-size: 18px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 30px;
+    text-align: center;
 }
 
 #label-assunto {
