@@ -1,16 +1,43 @@
 const express = require("express")
 const router = express.Router()
 const Agenda = require("@model/agendaModel");
+const Usuario = require('@model/usuarioModel');
 
 router.get('/login/administrador/agenda', (req, res) => {
-    res.render("log/adm/agendaAdministrador")
+    Agenda.findAll().then(function(agendamento){
+        res.render("log/adm/agendaAdministrador", {agendamento: agendamento})
+    })
 })
 
 router.get('/login/administrador/agenda/agendar', (req, res) => {
-    res.render("log/adm/agendarAdministrador")
+    res.render("log/adm/agendarDadosAdministrador")
 })
 
-router.post('/login/administrador/agenda/agendar/sucess', (req, res) => {
+router.post('/login/administrador/agenda/agendar', (req, res) => {
+    idUsuario = req.body.idUsuario
+    Usuario.findOne({where:{idUsuario: idUsuario}}).then(id => {
+        var UsuarioExiste = (id != undefined)
+        if(UsuarioExiste){
+            res.redirect(`/login/administrador/agenda/agendar/${id.idUsuario}`);
+        } else {
+            res.redirect('/');
+        }
+    })
+})
+
+router.get('/login/administrador/agenda/agendar/:idUsuario', (req, res) => {
+    Usuario.findOne({where: {idUsuario: idUsuario}}).then(function(dados){
+        if(!dados) {
+            res.redirect(`/`)
+        } else {
+            res.render('log/adm/agendarAdministrador', { dados: dados})
+        }
+    })
+})
+
+router.post('/login/administrador/agenda/agendar/success', (req, res) => {
+    var idMorador = req.body.idMorador;
+    var nome = req.body.nome;
     var titulo = req.body.titulo;
     var assunto = req.body.assunto;
     var dataInicio = req.body.dataInicio;
@@ -19,6 +46,8 @@ router.post('/login/administrador/agenda/agendar/sucess', (req, res) => {
     var horarioFim = req.body.horarioFim;
 
         Agenda.create({
+            idMorador: idMorador,
+            nome: nome,
             titulo: titulo,
             assunto: assunto,
             dataInicio: dataInicio,
@@ -37,25 +66,40 @@ router.get('/login/administrador/agenda/pedidos', (req, res) => {
 })
 
 router.post('/login/administrador/agenda/pedidos', (req, res) => {
-    id = req.body.id
-    Agenda.findOne({where:{id: id}}).then(idAgendamento => {
+    idAgendamento = req.body.idAgendamento
+    Agenda.findOne({where:{idAgendamento: idAgendamento}}).then(id => {
         var UsuarioExiste = (id != undefined)
         if(UsuarioExiste){
-            res.redirect(`/login/administrador/agenda/pedidos/${idAgendamento.id}`);
+            res.redirect(`/login/administrador/agenda/pedidos/${id.idAgendamento}`);
         } else {
             res.redirect('/');
         }
     })
 })
 
-router.get('/login/administrador/agenda/pedidos/:id', (req, res) => {
-    Agenda.findOne({where: {id: id}}).then(function(pedido){
+router.get('/login/administrador/agenda/pedidos/:idAgendamento', (req, res) => {
+    Agenda.findOne({where: {idAgendamento: idAgendamento}}).then(function(pedido){
         if(!pedido) {
             res.redirect(`/login/Administrador/agenda/pedidos`)
         } else {
             res.render('log/adm/pedidosAtualizarAgendaAdministrador', { pedido: pedido })
         }
     })
+})
+
+router.post('/login/administrador/agenda/pedidos/:idAgendamento', (req, res) => {
+    var status = req.body.status;
+    if(req.body !== ''){
+        Agenda.update({
+            status: status,
+        },
+        {
+            where: {idAgendamento : idAgendamento}
+        });
+        res.redirect('/login/administrador/agenda');
+    } else {
+        res.render('log/adm/perfilAdministrador', { result : req.body})
+    }
 })
 
 module.exports = router;

@@ -48,6 +48,9 @@ router.get('/login/administrador/gerencial/update/:idUsuario', admPageGerencialC
 router.post('/login/administrador/gerencial/update/:idUsuario', admPageGerencialController);
 router.get('/login/administrador/financeiro', admPageFinanceiroController);
 router.get('/login/administrador/financeiro/registro', admPageFinanceiroController);
+router.post('/login/administrador/financeiro/registro', admPageFinanceiroController);
+router.get('/login/administrador/financeiro/registro/:idUsuario', admPageFinanceiroController);
+router.post('/login/administrador/financeiro/registro/success', admPageFinanceiroController);
 router.get('/login/administrador/financeiro/delete', admPageFinanceiroController)
 // router.delete gerencial
 router.get('/login/administrador/moradias', admPageMoradiasController);
@@ -74,10 +77,12 @@ router.get('/login/administrador/comunicados/delete/:idComunicado', admPageComun
 router.post('/login/administrador/comunicados/delete/:idComunicado', admPageComunicadosController);
 router.get('/login/administrador/agenda', admPageAgendaController);
 router.get('/login/administrador/agenda/agendar', admPageAgendaController);
-router.post('/login/administrador/agenda/agendar/sucess' ,admPageAgendaController);
+router.post('/login/administrador/agenda/agendar' ,admPageAgendaController);
+router.get('/login/administrador/agenda/agendar/:idUsuario', admPageAgendaController);
+router.post('/login/administrador/agenda/agendar/success' ,admPageAgendaController);
 router.get('/login/administrador/agenda/pedidos', admPageAgendaController);
 router.post('/login/administrador/agenda/pedidos', admPageAgendaController);
 router.get('/login/administrador/agenda/pedidos/:idAgendamento', admPageAgendaController);
-router.post('/login/administrador/agenda/pedidos/idAgendamento', admPageAgendaController);
+router.post('/login/administrador/agenda/pedidos/:idAgendamento', admPageAgendaController);
 
 module.exports = router;

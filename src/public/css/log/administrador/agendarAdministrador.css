@@ -94,11 +94,11 @@ hr {
     height: 25px;
     box-shadow: 0 0 1px var(--third-color);
     margin-left: 30px;
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 #label-idusuario {
-    margin-top: 40px;
+    margin-top: 20px;
     margin-right: 20px;
 }
 
@@ -107,7 +107,13 @@ hr {
 }
 
 #input-nome {
-    width: 300px;
+    width: 320px;
+    resize: none;
+    height: 25px;
+    font-size: 18px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 30px;
+    text-align: center;
 }
 
 #label-titulo {
@@ -115,7 +121,7 @@ hr {
 }
 
 #input-titulo {
-    width: 330px;
+    width: 400px;
 
 }
 
@@ -215,4 +221,5 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 15px;
 }

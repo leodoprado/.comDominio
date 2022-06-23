@@ -10,17 +10,17 @@
 </head>
 <body>
     <%- include('../../partials/menuAdministrador.ejs') %>
-    <form action="/login/administrador/agenda/agendar/sucess" method="post">
+    <form action="/login/administrador/agenda/agendar/success" method="post">
         <div class="container">
             <div class="container-conteudo">
                 <h1>Agendar Horário</h1>
                 <hr>
                 <div class="conteudo">
                     <div class="conteudo-dados">
-                        <label for="" id="label-idusuario">ID Usuário:<input  id="input-idusuario" class="inputs-ddc" type="text"></label>
-                        <label for="" id="label-nome">Nome:<input id="input-nome" class="inputs-ddc" type="text"></label>
+                        <label for="" id="label-idusuario">ID Usuário:<input value=<%= dados.idUsuario %> name="idMorador" id="input-idusuario" class="inputs-ddc" type="text" readonly="readonly"></label>
+                        <label for="">Nome: <textarea name="nome" id="input-nome" class="inputs-ddc" type="text" readonly="readonly"><%= dados.nome %></textarea></label>
                         <label for="" id="label-titulo">Título:<input name="titulo" id="input-titulo" class="inputs-ddc" type="text"></label>
-                        <label for="" id="label-assunto">Assunto:<textarea name="assunto" name="" class="inputs-ddc" id="input-assunto" cols="30" rows="10"></textarea></label>
+                        <label for="" id="label-assunto">Assunto:<textarea name="assunto" class="inputs-ddc" id="input-assunto" cols="30" rows="10"></textarea></label>
                         <div id="datainicio">
                             <label for="">Data Inicio:<input name="dataInicio" id="input-data" class="inputs-ddc" type="text"></label>
                             <label for="" id="label-horarioinicio">Horário Inicio:<input name="horarioInicio" id="input-horario" class="inputs-ddc" type="text"></label>
