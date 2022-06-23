@@ -50,10 +50,6 @@ label {
     font-size: 17px;
 }
 
-input:focus {
-    box-shadow: 0 0 3px var(--primary-color);
-}
-
 h1 {
     text-align: center;
     font-family: var(--second-font);
@@ -68,7 +64,8 @@ hr {
 .container {
     width: 100%;
 	height: 100vh;
-	background: var(--second-color);
+	background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(190,203,223,1) 77%, rgba(128,153,191,1) 100%, rgba(80,114,167,1) 100%); 
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -92,6 +89,14 @@ hr {
     align-items: center;
 }
 
+.container-conteudo input:focus {
+    box-shadow: 0 0 3px var(--primary-color);
+}
+
+.container-conteudo textarea:focus {
+    box-shadow: 0 0 3px var(--primary-color);
+}
+
 select {
     color: var(--primary-color);
     text-align: center;
@@ -110,10 +115,39 @@ select {
 }
 
 #idusuario {
-    margin-top: 45px;
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
-#ltMeses {
+#input-nome{
+    width: 400px;
+    resize: none;
+    height: 25px;
+    font-size: 18px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 20px;
+    text-align: center;
+}
+
+#label-ano {
+    margin-left: 20px;
+}
+
+#input-tempoContrato {
+    width: 150px;
+    resize: none;
+    height: 25px;
+    font-size: 18px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 20px;
+    text-align: center;
+}
+
+#label-status {
+    margin-left: 20px;
+}
+
+#mes {
     width: 125px;
 }
 
@@ -143,8 +177,7 @@ select {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 45px;
 }
 
 .container-btn {

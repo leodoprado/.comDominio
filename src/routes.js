@@ -52,7 +52,15 @@ router.post('/login/administrador/financeiro/registro', admPageFinanceiroControl
 router.get('/login/administrador/financeiro/registro/:idUsuario', admPageFinanceiroController);
 router.post('/login/administrador/financeiro/registro/success', admPageFinanceiroController);
 router.get('/login/administrador/financeiro/delete', admPageFinanceiroController)
-// router.delete gerencial
+router.post('/login/administrador/financeiro/delete', admPageFinanceiroController)
+router.get('/login/administrador/financeiro/delete/:numeroContrato', admPageFinanceiroController)
+router.post('/login/administrador/financeiro/delete/:numeroContrato', admPageFinanceiroController)
+router.get('/login/administrador/financeiro/atualizar', admPageFinanceiroController);
+router.post('/login/administrador/financeiro/atualizar', admPageFinanceiroController);
+router.get('/login/administrador/financeiro/atualizar/:numeroContrato', admPageFinanceiroController);
+router.post('/login/administrador/financeiro/atualizar/:numeroContrato', admPageFinanceiroController);
+
+
 router.get('/login/administrador/moradias', admPageMoradiasController);
 router.get('/login/administrador/moradias/vincular', admPageVincularMoradiasController);
 router.post('/login/administrador/moradias/vincular', admPageVincularMoradiasController);

@@ -6,48 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/log/administrador/financeiroCadastroAdministrador.css"> 
     <link rel="icon" type="imagem/png" href="/img/home/principal/icon.ico"/>
-    <title>Cadastro Financeiro - Administrador</title>
+    <title>Atualizar Contrato - Administrador</title>
 </head>
 <body>
     <%- include('../../partials/menuAdministrador.ejs') %>
-    <form action="/login/administrador/financeiro/registro/success" method="post">
+    <form action="/login/administrador/financeiro/atualizar/:numeroContrato" method="post">
         <div class="container">
             <div class="container-conteudo">
-                <h1>Contrato Financeiro</h1><hr>
+                <h1>Atualizar Contrato</h1><hr>
                 <div class="conteudo">
-                    <label for="" class="subConteudo" id="idusuario">Id Usuário:<input value=<%= dados.idUsuario %> name="idMorador"  type="text" readonly="readonly"></label>
+                    <label for="" class="subConteudo" id="idusuario">Id Usuário:<input value=<%= dados.idMorador %> name="idMorador"  type="text" readonly="readonly"></label>
                     <label for="">Nome: <textarea name="nome" id="input-nome" class="input-dados" type="text" readonly="readonly"><%= dados.nome %></textarea></label>
                     <div class="subConteudo" id="espacamento-topo">
-                        <label for="">Mês: <input type="text" name="mes"></label>
+                        <label for="">Mês: <input value=<%= dados.mes %> type="text" name="mes"></label>
     
-                        <label for="txAno" id="label-ano">Ano: <input type="number" name="ano" id="txAno" maxlength="4" 
+                        <label for="txAno" id="label-ano">Ano: <input value=<%= dados.ano %> type="number" name="ano" id="txAno" maxlength="4" 
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                         </label>
                     </div>
 
                     <div class="subConteudo">
-                        <label for="txNumContrato">Número do Contrato: <input type="number" name="numeroContrato" id="txNumContrato" maxlength="8" 
+                        <label for="txNumContrato">Número do Contrato: <input value=<%= dados.numeroContrato %> type="number" name="numeroContrato" id="txNumContrato" maxlength="8" 
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                         </label>
 
-                        <label for="">Tempo de Contrato:<input name="tempoContrato" type="text"></label>
+                        <label for="">Tempo de Contrato:<input value=<%= dados.tempoContrato %> name="tempoContrato" type="text"></label>
                     </div>
 
                     <div class="subConteudo">
-                        <label for="">Tipo de Pagamento:<input type="text" name="tipoPagamento"></label>
+                        <label for="">Tipo de Pagamento:<input value=<%= dados.tipoPagamento %> type="text" name="tipoPagamento"></label>
 
-                        <label for="" id="label-status">Status:<input type="text" name="status" placeholder="A pagar" readonly></label>
+                        <label for="" id="label-status">Status:<input value=<%= dados.status %> type="text" name="status" placeholder="A pagar" readonly></label>
                     </div>
 
                     <div class="subConteudo">
                         <label for="txValorPadrao">Valor Padrão Mensal: 
-                            <input type="number" id="txValorPadrao" name="valor" step="0.01">
+                            <input value=<%= dados.valor %> type="number" id="txValorPadrao" name="valor" step="0.01">
                         </label>
                     </div>
 
                     <div class="container-btn">
                         <a href="/login/administrador/financeiro/registro" id="btn-voltar">Voltar</a>
-                        <button type="submit" id="btn-cadastrar">Cadastrar</button>
+                        <button type="submit" id="btn-cadastrar">Atualizar</button>
                     </div>
                 </div>
             </div>

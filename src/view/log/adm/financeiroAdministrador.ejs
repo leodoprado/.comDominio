@@ -43,39 +43,23 @@
                                 <th>Status</th>
                                 <th>Valor</th>
                             </tr>
+                            <% financeiro.forEach(all => { %>
                                 <tr>
-                                    <td>Janeiro</td>
-                                    <td>123</td>
-                                    <td>Leonardo do Prado</td>
-                                    <td>12349995</td>
-                                    <td>6 meses</td>
-                                    <td>Pago</td>
-                                    <td>R$600,00</td>
+                                    <td><%= all.mes %></td>
+                                    <td><%= all.idMorador %></td>
+                                    <td><%= all.nome %></td>
+                                    <td><%= all.numeroContrato %></td>
+                                    <td><%= all.tempoContrato %></td>
+                                    <td><%= all.status %></td>
+                                    <td><%= all.valor %></td>
                                 </tr>
-                                <tr>
-                                    <td>Janeiro</td>
-                                    <td>12345</td>
-                                    <td>Paulo Augusto Lazzarotto</td>
-                                    <td>33312962</td>
-                                    <td>12 meses</td>
-                                    <td>A pagar</td>
-                                    <td>R$600,00</td>
-                                </tr>
-                                <tr>
-                                    <td>Janeiro</td>
-                                    <td>1234</td>
-                                    <td>Eduardo Pöttker da Silva</td>
-                                    <td>40122318</td>
-                                    <td>6 Meses</td>
-                                    <td>Pago</td>
-                                    <td>R$600,00</td>
-                                </tr>
+                                <% }) %>
                         </table>
                     </div>
                 </div>
                 <div class="container-button">
                     <a id="btn-excluir" href="/login/administrador/financeiro/delete">Apagar</a>
-                    <a id="btn-excluir" href="/login/administrador/financeiro/delete">Atualizar</a>
+                    <a id="btn-excluir" href="/login/administrador/financeiro/atualizar">Atualizar</a>
                     <a id="btn-cadastrar" href="/login/administrador/financeiro/registro">Cadastrar</a>
                 </div>
             </div>
