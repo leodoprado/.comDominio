@@ -18,32 +18,25 @@
                 <div class="container-tabela">
                     <table>
                         <tr>
-                            <th>ID</th>
-                            <th>Data do Requerimento</th>
+                            <th>ID Agendamento</th>
+                            <th>Nome</th>
                             <th>Titulo</th>
                             <th>Assunto</th>
                             <th>Data Inicio</th>
                             <th>Data Fim</th>
                             <th>Status</th>
                         </tr>
-                        <tr>
-                            <th>1</th>
-                            <td>15/02/2022</td>
-                            <td>Agendar o salão de festas!</td>
-                            <td>Gostaria de agendar o salão de festas fim de semana, para comemorar o aniversário da minha filha.</td>
-                            <td>18/06/2022</td>
-                            <td>18/06/2022</td>
-                            <td>Aceito</td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>19/02/2022</td>
-                            <td>Agendar o salão de festas do prédio</td>
-                            <td>Convidar alguns amigos para comemorar o meu aniversário.</td>
-                            <td>25/06/2022</td>
-                            <td>26/06/2022</td>
-                            <td>Processando</td>
-                        </tr>
+                        <% agendamento.forEach(all => { %>
+                            <tr>
+                                <td><%= all.idAgendamento %></td>
+                                <td><%= all.nome %></td>
+                                <td><%= all.titulo %></td>
+                                <td><%= all.assunto %></td>
+                                <td><%= all.dataInicio %></td>
+                                <td><%= all.dataFim %></td>
+                                <td><%= all.status %></td>
+                            </tr>
+                            <% }) %>
                     </table>
                 </div>
                 <div class="container-button">

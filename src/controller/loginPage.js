@@ -31,7 +31,7 @@ router.post('/authenticate', (req, res) => {
                 res.redirect('/login');
             }
         } else {
-            res.redirect('/');
+            res.redirect('/login');
         }
     })
 })

@@ -18,6 +18,7 @@
                 <div class="container-tabela">
                     <table>
                         <tr>
+                            <th>ID Usuário</th>
                             <th>Acesso</th>
                             <th>Nome</th>
                             <th>Data de Nascimento</th>
@@ -26,6 +27,7 @@
                         </tr>
                         <% moradores.forEach(all => { %>
                             <tr>
+                                <td><%= all.idUsuario %> </td>
                                 <td><%= all.nivelAcesso %></td>
                                 <td><%= all.nome %></td>
                                 <td><%= all.datanascimento %></td>

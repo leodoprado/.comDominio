@@ -4,5 +4,5 @@ $(document).ready(function(){
     $('.input-telefone').mask('(00)00000-0000');
     $('#input-telefone').mask('(00)00000-0000');
     $('#input-estado').mask('AA');
-    $('#input-rg').mask('0000000000');
+    $('#input-rg').mask('000000000');
 })

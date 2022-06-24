@@ -3,6 +3,12 @@ const router = express.Router()
 const Usuario = require("@model/usuarioModel");
 const Financeiro = require('@model/financeiroModel')
 
+router.get('/login/morador/financeiro', (req, res) => {
+    Financeiro.findAll().then(function(financeiro){
+        res.render("log/morador/financeiroMorador", {financeiro: financeiro})
+    })
+})
+
 router.get('/login/administrador/financeiro', (req, res) => {
     Financeiro.findAll().then(function(financeiro){
         res.render("log/adm/financeiroAdministrador", {financeiro: financeiro})

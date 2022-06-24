@@ -30,13 +30,13 @@
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                         </label>
 
-                        <label for="">Tempo de Contrato:<input value=<%= dados.tempoContrato %> name="tempoContrato" type="text"></label>
+                        <label for="">Tempo de Contrato: <textarea id="input-tempoContrato" type="text" name="tempoContrato"><%= dados.tempoContrato %></textarea></label>
                     </div>
 
                     <div class="subConteudo">
                         <label for="">Tipo de Pagamento:<input value=<%= dados.tipoPagamento %> type="text" name="tipoPagamento"></label>
 
-                        <label for="" id="label-status">Status:<input value=<%= dados.status %> type="text" name="status" placeholder="A pagar" readonly></label>
+                        <label for="" id="label-status">Status:<textarea id="input-status" type="text" name="status"><%= dados.status %></textarea></label>
                     </div>
 
                     <div class="subConteudo">

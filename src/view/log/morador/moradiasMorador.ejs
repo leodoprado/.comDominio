@@ -26,33 +26,17 @@
                             <th>Garagem</th>
                             <th>Telefone</th>
                         </tr>
+                        <% moradias.forEach(all => { %>
                             <tr>
-                                <td>123</td>
-                                <td>Leonardo do Prado</td>
-                                <td>301</td>
-                                <td>3</td>
-                                <td>Frente</td>
-                                <td>301 / 302</td>
-                                <td>(54)99991-2440</td>
+                                <td><%= all.idMorador %></td>
+                                <td><%= all.nome %></td>
+                                <td><%= all.numApto %></td>
+                                <td><%= all.andar %></td>
+                                <td><%= all.posicao %></td>
+                                <td><%= all.garagem %></td>
+                                <td><%= all.telefone %></td>
                             </tr>
-                            <tr>
-                                <td>1234</td>
-                                <td>Paulo Augusto Lazzarotto</td>
-                                <td>201</td>
-                                <td>2</td>
-                                <td>Fundos</td>
-                                <td>201</td>
-                                <td>(54)99932-3712</td>
-                            </tr>
-                            <tr>
-                                <td>12345</td>
-                                <td>Eduardo Silva Pottker</td>
-                                <td>401</td>
-                                <td>4</td>
-                                <td>Frente</td>
-                                <td>400</td>
-                                <td>(54)99823-1846</td>
-                            </tr>
+                            <% }) %>
                     </table>
                 </div>
             </div>

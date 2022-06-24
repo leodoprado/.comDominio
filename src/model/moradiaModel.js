@@ -4,8 +4,8 @@ const Usuario = require('@model/usuarioModel');
 
 const Moradia = connection.define('moradia', {
     numApto: {
-        primaryKey: true,
         type: Sequelize.INTEGER,
+        primaryKey: true,
         allowNull: false
     },
     andar: {

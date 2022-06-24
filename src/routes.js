@@ -15,6 +15,8 @@ const admPageAgendaController = require('@controller/adm/admPageAgenda');
 const moradorPagePerfilController = require('@controller/morador/moradorPagePerfil');
 const moradorPageGerencialController = require('@controller/morador/moradorPageGerencial');
 const moradorPageMoradiasController = require('@controller/morador/moradorPageMoradias');
+const moradorPageFinanceiroController = require('@controller/adm/admPageFinanceiro');
+const moradorPageComunicadosController = require('@controller/adm/admPageComunicados')
 const moradorPageAgendaController = require('@controller/morador/moradorPageAgenda');
 const create = require('@controller/loginPage');
 
@@ -30,8 +32,14 @@ router.get('/login/morador/perfil/:idUsuario', moradorPagePerfilController);
 router.post('/login/morador/perfil/:idUsuario', moradorPagePerfilController);
 router.get('/login/morador/gerencial', moradorPageGerencialController);
 router.get('/login/morador/moradias', moradorPageMoradiasController);
+router.get('/login/morador/financeiro', moradorPageFinanceiroController)
+router.get('/login/morador/comunicados', moradorPageComunicadosController);
 router.get('/login/morador/agenda', moradorPageAgendaController);
-
+router.get('/login/morador/agenda', moradorPageAgendaController);
+router.get('/login/morador/agenda/agendar' ,moradorPageAgendaController);
+router.post('/login/morador/agenda/agendar' ,moradorPageAgendaController);
+router.get('/login/morador/agenda/agendar/:idUsuario', moradorPageAgendaController);
+router.post('/login/morador/agenda/agendar/success' ,moradorPageAgendaController);
 // Rotas Administrador
 router.get('/login/administrador/perfil/:idUsuario', admPagePerfilController);
 router.post('/login/administrador/perfil/:idUsuario', admPagePerfilController)
