@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const accessValidation = require('@middleware/accessValidation')
 const homePageController = require('./controller/homePage');
 const loginPageController = require('./controller/loginPage');
 const esqueceusenhaPageController = require('@controller/loginPage');
@@ -28,81 +29,81 @@ router.get('/create', create);
 router.post('/create/user', create);
 router.get('/central-de-ajuda', homePageController);
 router.get('/assinatura-do-software', homePageController);
-router.get('/login/morador/perfil/:idUsuario', moradorPagePerfilController);
-router.post('/login/morador/perfil/:idUsuario', moradorPagePerfilController);
-router.get('/login/morador/gerencial', moradorPageGerencialController);
-router.get('/login/morador/moradias', moradorPageMoradiasController);
-router.get('/login/morador/financeiro', moradorPageFinanceiroController)
-router.get('/login/morador/comunicados', moradorPageComunicadosController);
-router.get('/login/morador/agenda', moradorPageAgendaController);
-router.get('/login/morador/agenda', moradorPageAgendaController);
-router.get('/login/morador/agenda/agendar' ,moradorPageAgendaController);
-router.post('/login/morador/agenda/agendar' ,moradorPageAgendaController);
-router.get('/login/morador/agenda/agendar/:idUsuario', moradorPageAgendaController);
-router.post('/login/morador/agenda/agendar/success' ,moradorPageAgendaController);
+router.get('/login/morador/perfil/:idUsuario', accessValidation ,moradorPagePerfilController);
+router.post('/login/morador/perfil/:idUsuario', accessValidation ,moradorPagePerfilController);
+router.get('/login/morador/gerencial', accessValidation, moradorPageGerencialController);
+router.get('/login/morador/moradias', accessValidation ,moradorPageMoradiasController);
+router.get('/login/morador/financeiro', accessValidation ,moradorPageFinanceiroController)
+router.get('/login/morador/comunicados',accessValidation ,moradorPageComunicadosController);
+router.get('/login/morador/agenda',accessValidation ,moradorPageAgendaController);
+router.get('/login/morador/agenda',accessValidation ,moradorPageAgendaController);
+router.get('/login/morador/agenda/agendar' ,accessValidation ,moradorPageAgendaController);
+router.post('/login/morador/agenda/agendar' ,accessValidation ,moradorPageAgendaController);
+router.get('/login/morador/agenda/agendar/:idUsuario',accessValidation ,moradorPageAgendaController);
+router.post('/login/morador/agenda/agendar/success',accessValidation ,moradorPageAgendaController);
 // Rotas Administrador
-router.get('/login/administrador/perfil/:idUsuario', admPagePerfilController);
-router.post('/login/administrador/perfil/:idUsuario', admPagePerfilController)
-router.get('/login/administrador/gerencial', admPageGerencialController);
-router.get('/login/administrador/gerencial/create', admPageCreateController);
+router.get('/login/administrador/perfil/:idUsuario', accessValidation ,admPagePerfilController);
+router.post('/login/administrador/perfil/:idUsuario',accessValidation ,admPagePerfilController)
+router.get('/login/administrador/gerencial',accessValidation ,admPageGerencialController);
+router.get('/login/administrador/gerencial/create', accessValidation ,admPageCreateController);
 router.post('/login/administrador/gerencial/create/success', admPageCreateController);
-router.get('/login/administrador/gerencial/delete', admPageDeleteController);
-router.post('/login/administrador/gerencial/delete', admPageDeleteController);
-router.get('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController);
-router.post('/login/administrador/gerencial/delete/:idUsuario', admPageDeleteController);
-router.get('/login/administrador/gerencial/update', admPageGerencialController);
-router.post('/login/administrador/gerencial/update', admPageGerencialController);
-router.get('/login/administrador/gerencial/update/:idUsuario', admPageGerencialController);
-router.post('/login/administrador/gerencial/update/:idUsuario', admPageGerencialController);
-router.get('/login/administrador/financeiro', admPageFinanceiroController);
-router.get('/login/administrador/financeiro/registro', admPageFinanceiroController);
-router.post('/login/administrador/financeiro/registro', admPageFinanceiroController);
-router.get('/login/administrador/financeiro/registro/:idUsuario', admPageFinanceiroController);
-router.post('/login/administrador/financeiro/registro/success', admPageFinanceiroController);
-router.get('/login/administrador/financeiro/delete', admPageFinanceiroController)
-router.post('/login/administrador/financeiro/delete', admPageFinanceiroController)
-router.get('/login/administrador/financeiro/delete/:numeroContrato', admPageFinanceiroController)
-router.post('/login/administrador/financeiro/delete/:numeroContrato', admPageFinanceiroController)
-router.get('/login/administrador/financeiro/atualizar', admPageFinanceiroController);
-router.post('/login/administrador/financeiro/atualizar', admPageFinanceiroController);
-router.get('/login/administrador/financeiro/atualizar/:numeroContrato', admPageFinanceiroController);
-router.post('/login/administrador/financeiro/atualizar/:numeroContrato', admPageFinanceiroController);
+router.get('/login/administrador/gerencial/delete', accessValidation ,admPageDeleteController);
+router.post('/login/administrador/gerencial/delete', accessValidation ,admPageDeleteController);
+router.get('/login/administrador/gerencial/delete/:idUsuario',  accessValidation ,admPageDeleteController);
+router.post('/login/administrador/gerencial/delete/:idUsuario',  accessValidation ,admPageDeleteController);
+router.get('/login/administrador/gerencial/update',  accessValidation ,admPageGerencialController);
+router.post('/login/administrador/gerencial/update',  accessValidation ,admPageGerencialController);
+router.get('/login/administrador/gerencial/update/:idUsuario',  accessValidation ,admPageGerencialController);
+router.post('/login/administrador/gerencial/update/:idUsuario',  accessValidation ,admPageGerencialController);
+router.get('/login/administrador/financeiro',  accessValidation ,admPageFinanceiroController);
+router.get('/login/administrador/financeiro/registro',  accessValidation ,admPageFinanceiroController);
+router.post('/login/administrador/financeiro/registro',  accessValidation ,admPageFinanceiroController);
+router.get('/login/administrador/financeiro/registro/:idUsuario',  accessValidation ,admPageFinanceiroController);
+router.post('/login/administrador/financeiro/registro/success',  accessValidation ,admPageFinanceiroController);
+router.get('/login/administrador/financeiro/delete',  accessValidation ,admPageFinanceiroController)
+router.post('/login/administrador/financeiro/delete',  accessValidation ,admPageFinanceiroController)
+router.get('/login/administrador/financeiro/delete/:numeroContrato',  accessValidation ,admPageFinanceiroController)
+router.post('/login/administrador/financeiro/delete/:numeroContrato',  accessValidation ,admPageFinanceiroController)
+router.get('/login/administrador/financeiro/atualizar',  accessValidation ,admPageFinanceiroController);
+router.post('/login/administrador/financeiro/atualizar',  accessValidation ,admPageFinanceiroController);
+router.get('/login/administrador/financeiro/atualizar/:numeroContrato',  accessValidation ,admPageFinanceiroController);
+router.post('/login/administrador/financeiro/atualizar/:numeroContrato',  accessValidation ,admPageFinanceiroController);
 
 
-router.get('/login/administrador/moradias', admPageMoradiasController);
-router.get('/login/administrador/moradias/vincular', admPageVincularMoradiasController);
-router.post('/login/administrador/moradias/vincular', admPageVincularMoradiasController);
-router.get('/login/administrador/moradias/vincular/:idUsuario', admPageVincularMoradiasController);
-router.post('/login/administrador/moradias/vincular/:idUsuario', admPageVincularMoradiasController);
-router.post('/login/administrador/moradias/vincular/success', admPageVincularMoradiasController);
-router.get('/login/administrador/moradias/alterar', admPageVincularMoradiasController);
-router.post('/login/administrador/moradias/alterar', admPageVincularMoradiasController);
-router.get('/login/administrador/moradias/alterar/:numApto', admPageVincularMoradiasController);
-router.post('/login/administrador/moradias/alterar/:numApto', admPageVincularMoradiasController);
-router.get('/login/administrador/moradias/apagar', admPageVincularMoradiasController);
-router.post('/login/administrador/moradias/apagar', admPageVincularMoradiasController);
-router.get('/login/administrador/moradias/apagar/:numApto', admPageVincularMoradiasController);
-router.post('/login/administrador/moradias/apagar/success/:numApto', admPageVincularMoradiasController);
+router.get('/login/administrador/moradias',  accessValidation ,admPageMoradiasController);
+router.get('/login/administrador/moradias/vincular',  accessValidation ,admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/vincular',  accessValidation ,admPageVincularMoradiasController);
+router.get('/login/administrador/moradias/vincular/:idUsuario',  accessValidation ,admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/vincular/:idUsuario',  accessValidation ,admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/vincular/success',  accessValidation ,admPageVincularMoradiasController);
+router.get('/login/administrador/moradias/alterar',  accessValidation ,admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/alterar',  accessValidation ,admPageVincularMoradiasController);
+router.get('/login/administrador/moradias/alterar/:numApto',  accessValidation ,admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/alterar/:numApto',  accessValidation ,admPageVincularMoradiasController);
+router.get('/login/administrador/moradias/apagar',  accessValidation ,admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/apagar',  accessValidation ,admPageVincularMoradiasController);
+router.get('/login/administrador/moradias/apagar/:numApto',  accessValidation ,admPageVincularMoradiasController);
+router.post('/login/administrador/moradias/apagar/success/:numApto',  accessValidation ,admPageVincularMoradiasController);
 // rotas de moradias
-router.get('/login/administrador/comunicados', admPageComunicadosController);
-router.get('/login/administrador/comunicados/cadastro', admPageComunicadosController);
-router.post('/login/administrador/comunicados/cadastro', admPageComunicadosController);
-router.get('/login/administrador/comunicados/delete', admPageComunicadosController);
-router.post('/login/administrador/comunicados/delete', admPageComunicadosController);
-router.get('/login/administrador/comunicados/delete/:idComunicado', admPageComunicadosController);
-router.post('/login/administrador/comunicados/delete/:idComunicado', admPageComunicadosController);
-router.get('/login/administrador/agenda', admPageAgendaController);
-router.get('/login/administrador/agenda/agendar', admPageAgendaController);
-router.post('/login/administrador/agenda/agendar' ,admPageAgendaController);
-router.get('/login/administrador/agenda/agendar/:idUsuario', admPageAgendaController);
-router.post('/login/administrador/agenda/agendar/success' ,admPageAgendaController);
-router.get('/login/administrador/agenda/pedidos', admPageAgendaController);
-router.post('/login/administrador/agenda/pedidos', admPageAgendaController);
-router.get('/login/administrador/agenda/pedidos/:idAgendamento', admPageAgendaController);
-router.post('/login/administrador/agenda/pedidos/:idAgendamento', admPageAgendaController);
-router.get('/login/administrador/agenda/excluir', admPageAgendaController);
-router.post('/login/administrador/agenda/excluir', admPageAgendaController);
-router.get('/login/administrador/agenda/excluir/:idAgendamento', admPageAgendaController);
-router.post('/login/administrador/agenda/excluir/:idAgendamento', admPageAgendaController);
+router.get('/login/administrador/comunicados',  accessValidation ,admPageComunicadosController);
+router.get('/login/administrador/comunicados/cadastro',  accessValidation ,admPageComunicadosController);
+router.post('/login/administrador/comunicados/cadastro',  accessValidation ,admPageComunicadosController);
+router.get('/login/administrador/comunicados/delete',  accessValidation ,admPageComunicadosController);
+router.post('/login/administrador/comunicados/delete',  accessValidation ,admPageComunicadosController);
+router.get('/login/administrador/comunicados/delete/:idComunicado',  accessValidation ,admPageComunicadosController);
+router.post('/login/administrador/comunicados/delete/:idComunicado',  accessValidation ,admPageComunicadosController);
+router.get('/login/administrador/agenda',  accessValidation ,admPageAgendaController);
+router.get('/login/administrador/agenda/agendar',  accessValidation ,admPageAgendaController);
+router.post('/login/administrador/agenda/agendar', accessValidation ,admPageAgendaController);
+router.get('/login/administrador/agenda/agendar/:idUsuario', accessValidation ,admPageAgendaController);
+router.post('/login/administrador/agenda/agendar/success', accessValidation ,admPageAgendaController);
+router.get('/login/administrador/agenda/pedidos',  accessValidation ,admPageAgendaController);
+router.post('/login/administrador/agenda/pedidos',  accessValidation ,admPageAgendaController);
+router.get('/login/administrador/agenda/pedidos/:idAgendamento',  accessValidation ,admPageAgendaController);
+router.post('/login/administrador/agenda/pedidos/:idAgendamento',  accessValidation ,admPageAgendaController);
+router.get('/login/administrador/agenda/excluir',  accessValidation ,admPageAgendaController);
+router.post('/login/administrador/agenda/excluir',  accessValidation ,admPageAgendaController);
+router.get('/login/administrador/agenda/excluir/:idAgendamento',  accessValidation ,admPageAgendaController);
+router.post('/login/administrador/agenda/excluir/:idAgendamento',  accessValidation ,admPageAgendaController);
 
 module.exports = router;
