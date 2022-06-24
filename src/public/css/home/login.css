@@ -81,7 +81,7 @@ input:focus {
 }
 
 input:invalid {
-    border-color: red !important;
+    border-color: var(--primary-color) !important;
   }
   input:valid {
     border-color: var(--primary-color) !important;

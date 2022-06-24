@@ -10,7 +10,7 @@
 </head>
 <body>
     <%- include('../../partials/menuMorador.ejs') %> 
-    <form action="/login/administrador/perfil/:id" method="post">
+    <form action="/login/morador/perfil/:id" method="post">
         <div class="container">
             <div class="container-conteudo">
                 <div class="conteudo">
@@ -36,15 +36,15 @@
                         </div>
                         <div class="dados-pessoais">
                             <label for="">CPF: <input value=<%= result.cpf%> name="cpf" id="input-cpf" type="text" readonly></label>
-                            <label for="" id="label-rg">RG: <input value=<%= result.rg %> name="rg" id="input-rg" type="text"></label>
+                            <label for="" id="label-rg">RG: <input value=<%= result.rg %> name="rg" id="input-rg" type="text" required></label>
                         </div>
                         <div class="dados-pessoais">
-                            <label for="">Estado Civil: <input value=<%= result.estadocivil %> name="estadocivil" id="input-estadocivil" type="text"></label>
-                            <label for="" id="label-sexo">Sexo: <input value=<%= result.sexo %> name="sexo" id="input-sexo" type="text"></label>
+                            <label for="">Estado Civil: <input value=<%= result.estadocivil %> name="estadocivil" id="input-estadocivil" type="text" required></label>
+                            <label for="" id="label-sexo">Sexo: <input value=<%= result.sexo %> name="sexo" id="input-sexo" type="text" required></label>
                         </div>
                         <div class="dados-pessoais">
-                            <label for="">País: <input value=<%= result.pais %>  name="pais" type="text" id="input-nacionalidade"></label>
-                            <label for="" id="label-cidadenatal">Cidade Natal: <textarea name="cidadenatal" id="input-cidadenatal" type="text"><%= result.cidadenatal %></textarea></label>                            <label for="" id="label-estado">UF: <input value=<%= result.estado %> name="estado" type="text" id="input-estado"></label>
+                            <label for="">País: <input value=<%= result.pais %>  name="pais" type="text" id="input-nacionalidade" required></label>
+                            <label for="" id="label-cidadenatal">Cidade Natal: <textarea name="cidadenatal" id="input-cidadenatal" type="text" required><%= result.cidadenatal %></textarea></label>                            <label for="" id="label-estado">UF: <input value=<%= result.estado %> name="estado" type="text" id="input-estado"></label>
                         </div>
                     </div>
                 </div>
@@ -53,10 +53,10 @@
                         <hr>
                         <div class="contato">
                             <label for="">Email: <input value=<%= result.email %> name="email" type="text" id="input-email" readonly></label>
-                            <label for="" id="label-emailcomplementar">Email (complementar): <input value=<%= result.emailcomplementar %> name="emailcomplementar" id="input-email" type="text"></label>                    </div>
+                            <label for="" id="label-emailcomplementar">Email (complementar): <input value=<%= result.emailcomplementar %> name="emailcomplementar" id="input-email" type="text" required></label>                    </div>
                         <div class="contato">
                             <label for="">Telefone 1: <input value=<%= result.telefone1 %> name="telefone1" type="text" class="input-telefone" readonly></label>
-                            <label for="" id="label-telefone2">Telefone 2: <input value=<%= result.telefone2 %> name="telefone2" class="input-telefone" type="text"></label>
+                            <label for="" id="label-telefone2">Telefone 2: <input value=<%= result.telefone2 %> name="telefone2" class="input-telefone" type="text" required></label>
                             <button type="reset" id="btn-cancelar">Cancelar</button>
                             <button type="submit" id="btn-salvar" >Atualizar</button>
                         </div>
