@@ -52,6 +52,6 @@ Agenda.belongsTo(Usuario, {
 })
 
 // Sincronizando o model com o banco de dados
- Agenda.sync({force: false});
+// Agenda.sync({force: false});
 
 module.exports = Agenda;

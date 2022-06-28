@@ -47,6 +47,6 @@ Financeiro.belongsTo(Usuario, {
 })
 
 // Sincronizando o model com o banco de dados
-Financeiro.sync({force: false});
+// Financeiro.sync({force: false});
 
 module.exports = Financeiro;

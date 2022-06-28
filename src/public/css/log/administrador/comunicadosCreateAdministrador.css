@@ -209,3 +209,40 @@ hr {
     align-items: center;
     margin-top: 10px;
 }
+
+#labelTTexto {
+    margin-bottom: 2px;
+    margin-top: 20px;
+}
+
+#inputTitulo {
+    width: 300px;
+    resize: none;
+    height: 25px;
+    font-size: 18px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 20px;
+    text-align: center;
+}
+
+#dataEEnvio {
+    margin-left: 20px;
+    margin-right: 60px;
+    width: 120px;
+}
+
+#inputAssunto{
+    width: 537px;
+    resize: none;
+    height: 25px;
+    font-size: 18px;
+    box-shadow: 0 0 1px var(--third-color);
+    margin-left: 20px;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.TituloeDDataEnvio {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
